@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YP Tech | Financing Technology by Yayasan Pemangkin</title>
+<meta name="description" content="YP Tech is the fintech subsidiary of Yayasan Pemangkin, building digital financing, AI credit-scoring and blockchain infrastructure for the financing industry, with technology enabler Global Psytech Sdn Bhd.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     Brand tokens - taken from pemangkin.my
+     ========================================================= */
+  :root {
+    --green:       #175b3b;   /* Pemangkin primary / link */
+    --green-dark:  #0f3a26;   /* hover */
+    --sage:        #6f9364;   /* secondary button */
+    --sage-deep:   #4b6643;   /* stats band */
+    --sage-bg:     #a9bd9b;   /* "Our story" band */
+    --mint:        #d5e7c3;   /* hero background */
+    --mint-soft:   #e8f1df;
+    --cream:       #efeade;
+    --grey-bg:     #dcdedb;
+    --paper:       #f9f9f9;   /* body bg */
+    --border:      #dddddd;
+    --text:        #6b6e71;   /* body copy */
+    --text-light:  #797c7f;
+    --head:        #000000;
+    --white:       #ffffff;
+    --head-font:   "Kumbh Sans", "Segoe UI", Arial, sans-serif;
+    --body-font:   "Nunito", "Segoe UI", Arial, sans-serif;
+    --max:         1290px;
+    --ease:        cubic-bezier(.2, .7, .2, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--text);
+    font-family: var(--body-font); font-size: 17px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  main { overflow-x: clip; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4 { font-family: var(--head-font); color: var(--head); font-weight: 700; line-height: 1.15; margin: 0 0 1rem; }
+  h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); letter-spacing: -.02em; }
+  h2 { font-size: clamp(2rem, 3.4vw, 2.6rem); letter-spacing: -.015em; }
+  h3 { font-size: 1.25rem; }
+  p  { margin: 0 0 1rem; }
+  .container { width: min(var(--max), 92%); margin-inline: auto; }
+  .section { padding: 110px 0; position: relative; }
+  .center { text-align: center; }
+
+  .eyebrow {
+    display: inline-block; font-family: var(--head-font); font-weight: 700;
+    font-size: .82rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--green); margin-bottom: .8rem;
+  }
+
+  /* ---------- Buttons (Pemangkin: square, uppercase, solid green / sage) ---------- */
+  .btn {
+    position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: .6rem;
+    padding: 15px 32px; border-radius: 2px; border: 0; cursor: pointer;
+    font-family: var(--head-font); font-weight: 700; font-size: .8rem;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--white);
+    background: var(--green); transition: color .35s var(--ease); z-index: 0;
+  }
+  .btn::before {                  /* fill-sweep hover */
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--green-dark); transform: scaleX(0); transform-origin: right;
+    transition: transform .45s var(--ease);
+  }
+  .btn:hover::before { transform: scaleX(1); transform-origin: left; }
+  .btn .arrow { transition: transform .35s var(--ease); }
+  .btn:hover .arrow { transform: translateX(4px); }
+  .btn-sage { background: var(--sage); }
+  .btn-sage::before { background: var(--sage-deep); }
+  .btn-outline { background: transparent; color: var(--green); box-shadow: inset 0 0 0 2px var(--green); }
+  .btn-outline::before { background: var(--green); }
+  .btn-outline:hover { color: var(--white); }
+
+  /* =========================================================
+     Header
+     ========================================================= */
+  .site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    transition: background .35s, box-shadow .35s, padding .35s;
+    padding: 18px 0;
+  }
+  .site-header.scrolled { background: rgba(255,255,255,.96); box-shadow: 0 6px 24px rgba(0,0,0,.06); padding: 10px 0; backdrop-filter: blur(8px); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .logo { display: flex; align-items: center; gap: .75rem; }
+  .logo-mark { width: 46px; height: 46px; flex: none; }
+  .logo-text { font-family: var(--head-font); font-weight: 800; font-size: 1.35rem; color: var(--head); line-height: 1; }
+  .logo-text small { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .16em; color: var(--green); margin-top: 5px; }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { font-family: var(--head-font); font-size: 1rem; color: var(--head); position: relative; padding: 6px 0; }
+  .nav-links a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--green); transform: scaleX(0); transform-origin: right; transition: transform .35s var(--ease); }
+  .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
+  .nav-actions { display: flex; align-items: center; gap: 1rem; }
+  .nav-actions .btn { padding: 12px 22px; }
+  .menu-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 6px; }
+  .menu-toggle span { display: block; width: 22px; height: 2px; background: var(--head); margin: 5px 0; transition: .3s; }
+
+  /* =========================================================
+     1. Hero  (pale-mint panel + grayscale band, like pemangkin.my)
+     ========================================================= */
+  .hero { background: var(--mint); padding: 0; overflow: hidden; }
+  .hero-top { position: relative; padding: 170px 0 90px; }
+  .hero-top::before {             /* faint map/dot texture */
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    background-image: radial-gradient(rgba(23,91,59,.18) 1.2px, transparent 1.3px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%);
+  }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; }
+  .hero h1 .brand { color: var(--green); text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 8px; }
+  .rotator { display: inline-grid; color: var(--green); }
+  .rotator span { grid-area: 1 / 1; opacity: 0; transform: translateY(40%); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+  .rotator span.on { opacity: 1; transform: none; }
+  .rotator span.off { opacity: 0; transform: translateY(-40%); }
+  .hero .lead { font-size: 1.15rem; color: #3f4a44; max-width: 560px; margin-bottom: 2rem; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .hero-visual { position: relative; aspect-ratio: 1 / .92; }
+  .hero-photo {
+    position: absolute; inset: 0 8% 6% 6%; border-radius: 4px; overflow: hidden;
+    background: #2b2b2b; box-shadow: 0 30px 60px rgba(15,58,38,.25);
+  }
+  .hero-photo img, .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+  .float-card {
+    position: absolute; background: var(--white); border-radius: 6px; padding: 14px 18px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.14); font-family: var(--head-font); font-size: .85rem; color: var(--head);
+    display: flex; align-items: center; gap: 12px; animation: bob 6s ease-in-out infinite;
+  }
+  .float-card .ic { width: 38px; height: 38px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; flex: none; }
+  .float-card .ic svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 2; }
+  .float-card small { display: block; color: var(--text-light); font-family: var(--body-font); font-size: .75rem; }
+  .float-card.c1 { top: 10%; left: -4%; }
+  .float-card.c2 { bottom: 0; right: 0; animation-delay: -2s; }
+  .float-card.c3 { top: 58%; left: -6%; animation-delay: -4s; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+  .hero-band { position: relative; background: #1c1c1c; color: var(--white); overflow: hidden; }
+  .hero-band .band-art { position: absolute; inset: 0; opacity: .55; }
+  .hero-band .band-art svg { width: 100%; height: 100%; }
+  .hero-band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.35) 70%, rgba(0,0,0,.1)); }
+  .band-inner { position: relative; z-index: 1; padding: 70px 0; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+  .band-inner h3 { color: var(--white); font-size: 1.6rem; margin-bottom: .6rem; }
+  .band-inner p { color: rgba(255,255,255,.8); margin-bottom: 1.6rem; max-width: 560px; }
+  .band-stats { display: flex; gap: 0; justify-content: flex-end; }
+  .band-stats .stat { padding: 0 28px; border-left: 1px solid rgba(255,255,255,.25); }
+  .band-stats .stat:first-child { border-left: 0; }
+  .band-stats strong { white-space: nowrap; display: block; font-family: var(--head-font); font-size: 2rem; color: var(--white); line-height: 1.1; }
+  .band-stats span { font-size: .85rem; color: rgba(255,255,255,.7); }
+
+  /* animated ledger lines in the band */
+  .flow { stroke: var(--sage); stroke-width: 1.4; fill: none; stroke-dasharray: 6 10; animation: flow 3s linear infinite; }
+  .flow.alt { stroke: var(--mint); animation-duration: 4.5s; }
+  .node { fill: var(--mint); }
+  .pulse { fill: none; stroke: var(--mint); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: pulse 2.6s ease-out infinite; }
+  @keyframes flow  { to { stroke-dashoffset: -160; } }
+  @keyframes pulse { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(2.4); opacity: 0; } }
+
+  /* =========================================================
+     2. About  ("Our story" layout: sage band + grayscale collage)
+     ========================================================= */
+  .about { background: var(--sage-bg); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .collage { position: relative; height: 560px; }
+  .photo { position: absolute; overflow: hidden; background: #2a2a2a; box-shadow: 0 24px 50px rgba(0,0,0,.25); }
+  .photo svg { width: 100%; height: 100%; display: block; }
+  .collage .p1 { top: 0; left: 0; width: 66%; height: 78%; }
+  .collage .p2 { bottom: 0; right: 4%; width: 56%; height: 58%; border: 10px solid var(--sage-bg); }
+  .since {
+    position: absolute; top: 24px; right: 4%; text-align: right; font-family: var(--head-font);
+    color: var(--green); font-weight: 700; letter-spacing: .1em; font-size: .8rem;
+  }
+  .since b { display: block; font-size: 3.4rem; letter-spacing: -.02em; line-height: 1; color: var(--head); }
+  .about .eyebrow { color: var(--green-dark); }
+  .about p { color: #2f3a33; }
+  .lineage { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; margin: 28px 0 30px; }
+  .lineage-node { background: rgba(255,255,255,.55); border-radius: 4px; padding: 16px 18px; backdrop-filter: blur(4px); }
+  .lineage-node h3 { font-size: 1rem; margin-bottom: .15rem; }
+  .lineage-node p { font-size: .85rem; margin: 0; color: #3b463f; line-height: 1.5; }
+  .lineage-arrow svg { width: 40px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; }
+  .lineage-arrow path { stroke-dasharray: 4 5; animation: flow 1.8s linear infinite; }
+
+  .stats-band { background: var(--sage-deep); color: var(--white); padding: 70px 0; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stats-grid .stat { text-align: center; padding: 10px 20px; border-left: 1px solid rgba(255,255,255,.25); }
+  .stats-grid .stat:first-child { border-left: 0; }
+  .stats-grid svg { width: 54px; height: 54px; stroke: var(--white); fill: none; stroke-width: 1.4; margin: 0 auto 10px; display: block; }
+  .stats-grid strong { display: block; font-family: var(--head-font); font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--cream); line-height: 1.1; }
+  .stats-grid span { font-family: var(--head-font); font-weight: 600; font-size: .95rem; color: rgba(255,255,255,.85); }
+
+  /* =========================================================
+     3. Services  ("Our program and services": centred icon grid)
+     ========================================================= */
+  .services { background: var(--white); }
+  .section-head { max-width: 760px; margin: 0 auto 64px; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .service {
+    text-align: center; padding: 42px 32px 36px; border: 1px solid transparent; border-radius: 4px;
+    background: var(--white); transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s;
+    position: relative; overflow: hidden;
+  }
+  .service::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: var(--green); transform: scaleX(0); transition: transform .5s var(--ease); }
+  .service:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(15,58,38,.12); border-color: var(--border); }
+  .service:hover::after { transform: scaleX(1); }
+  .service .icon { width: 74px; height: 74px; margin: 0 auto 20px; display: grid; place-items: center; }
+  .service .icon svg { width: 64px; height: 64px; stroke: var(--green); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .6s var(--ease); }
+  .service:hover .icon svg { transform: rotate(-8deg) scale(1.1); }
+  .service h3 { font-size: 1.2rem; }
+  .service p { font-size: .95rem; color: var(--text); }
+  .service ul { list-style: none; padding: 0; margin: 1rem 0 0; }
+  .service li { font-size: .9rem; color: #3b3e40; padding: .25rem 0; }
+  .service li::before { content: "•"; color: var(--sage); font-weight: 700; margin-right: .5rem; }
+
+  /* =========================================================
+     4. Technology  ("Programs & schemes" grey band)
+     ========================================================= */
+  .tech { background: var(--grey-bg); overflow: hidden; }
+  .tech-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+  .tech-photo { position: relative; height: 100%; min-height: 520px; }
+  .tech-photo .photo { inset: 0; }
+  .tech-photo .tag {
+    position: absolute; left: -14px; bottom: 34px; z-index: 2; background: var(--green); color: var(--white);
+    font-family: var(--head-font); font-weight: 700; padding: 16px 22px; font-size: .9rem; box-shadow: 0 14px 30px rgba(0,0,0,.2);
+  }
+  .tech-photo .tag b { display: block; font-size: 1.8rem; line-height: 1; }
+  .stack { display: grid; gap: 12px; margin-top: 10px; }
+  .layer {
+    display: grid; grid-template-columns: 190px 1fr; gap: 18px; align-items: center;
+    background: var(--white); padding: 16px 20px; border-radius: 3px; border-left: 4px solid var(--sage);
+    transition: border-color .35s, transform .35s var(--ease), box-shadow .35s;
+  }
+  .layer:hover { border-left-color: var(--green); transform: translateX(6px); box-shadow: 0 10px 24px rgba(0,0,0,.06); }
+  .layer h3 { margin: 0; font-size: .98rem; }
+  .layer h3 small { display: block; font-size: .68rem; letter-spacing: .14em; color: var(--sage); margin-bottom: 2px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: .8rem; padding: 4px 11px; border-radius: 2px; background: var(--mint-soft); color: var(--green-dark); font-weight: 600; }
+
+  .marquee { margin-top: 70px; border-top: 1px solid rgba(0,0,0,.08); border-bottom: 1px solid rgba(0,0,0,.08); padding: 22px 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .marquee-track { display: flex; gap: 56px; width: max-content; animation: marquee 32s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee-track span { font-family: var(--head-font); font-weight: 700; font-size: 1.15rem; color: var(--green); white-space: nowrap; display: flex; align-items: center; gap: 56px; }
+  .marquee-track span::after { content: "✦"; color: var(--sage); font-size: .8rem; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  .compliance { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 34px; }
+  .badge { font-family: var(--head-font); font-weight: 600; font-size: .82rem; padding: 9px 16px; border: 1px solid var(--green); color: var(--green); border-radius: 2px; background: rgba(255,255,255,.5); }
+
+  .enabler {
+    display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; padding: 10px 16px 10px 12px;
+    background: rgba(255,255,255,.6); border-left: 3px solid var(--green); border-radius: 2px;
+    font-family: var(--head-font); transition: background .3s, transform .35s var(--ease);
+  }
+  .enabler:hover { background: var(--white); transform: translateX(4px); }
+  .enabler-label { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--sage); }
+  .enabler-name { font-weight: 700; color: var(--head); }
+  .enabler .arrow { color: var(--green); }
+  .partner-node { grid-column: 1 / -1; border-left: 3px solid var(--green); }
+  .tag-sm { display: block; font-family: var(--head-font); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin-bottom: 2px; }
+
+  /* =========================================================
+     5. Technology partner (Global Psytech)
+     ========================================================= */
+  .partner { background: var(--green-dark); color: var(--white); overflow: hidden; }
+  .partner-bg { position: absolute; inset: 0; opacity: .35; pointer-events: none;
+    background-image: radial-gradient(rgba(213,231,195,.35) 1.2px, transparent 1.3px); background-size: 24px 24px;
+    mask-image: radial-gradient(ellipse at 80% 50%, #000 15%, transparent 65%); }
+  .partner-grid { position: relative; display: grid; grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: center; }
+  .partner h2 { color: var(--white); }
+  .partner p { color: rgba(255,255,255,.78); }
+  .partner .eyebrow { color: var(--mint); }
+  .btn-mint { background: var(--mint); color: var(--green-dark); }
+  .btn-mint::before { background: var(--white); }
+  .partner-visual { background: rgba(255,255,255,.05); border: 1px solid rgba(213,231,195,.18); border-radius: 4px; padding: 34px; }
+  .handshake { display: grid; grid-template-columns: 1fr 140px 1fr; align-items: center; text-align: center; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .party h3 { color: var(--white); font-size: 1rem; margin: 12px 0 2px; }
+  .party p { font-size: .82rem; margin: 0; color: var(--mint); }
+  .party-mark { width: 64px; height: 64px; margin: 0 auto; }
+  .party-word { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto; border-radius: 4px; background: var(--white); color: var(--green-dark); font-family: var(--head-font); font-weight: 800; font-size: .7rem; line-height: 1.1; letter-spacing: .02em; }
+  .link-line svg { width: 100%; height: 40px; overflow: visible; }
+  .link-line path { stroke: var(--sage); stroke-width: 2; stroke-dasharray: 5 6; animation: flow 2s linear infinite; }
+  .dot-run { fill: var(--mint); animation: run 2.4s var(--ease) infinite; }
+  @keyframes run { 0% { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(160px); opacity: 0; } }
+  .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; }
+  .role { background: rgba(255,255,255,.06); border-radius: 3px; padding: 16px 18px; border-top: 2px solid var(--sage); transition: background .35s, transform .35s var(--ease), border-color .35s; }
+  .role:hover { background: rgba(255,255,255,.1); transform: translateY(-4px); border-top-color: var(--mint); }
+  .role h3 { color: var(--white); font-size: .95rem; margin-bottom: .3rem; }
+  .role p { font-size: .84rem; margin: 0; line-height: 1.55; }
+
+  /* =========================================================
+     6. Contact
+     ========================================================= */
+  .contact { background: var(--paper); }
+  .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 70px; align-items: start; }
+  .contact-info .item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+  .contact-info .item:last-child { border-bottom: 0; }
+  .contact-info .item svg { width: 26px; height: 26px; flex: none; stroke: var(--green); fill: none; stroke-width: 1.6; margin-top: 3px; }
+  .contact-info h3 { font-size: .95rem; margin-bottom: .1rem; }
+  .contact-info p { margin: 0; color: var(--text); }
+  form { background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,.06); border-top: 4px solid var(--green); }
+  form h3 { margin-bottom: 1.4rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label { display: block; font-family: var(--head-font); font-weight: 600; font-size: .85rem; color: var(--head); margin-bottom: .35rem; }
+  input, select, textarea {
+    width: 100%; padding: 13px 14px; margin-bottom: 18px; border: 1px solid var(--border); border-radius: 2px;
+    font: inherit; font-size: .95rem; color: var(--head); background: var(--paper); transition: border-color .25s, box-shadow .25s, background .25s;
+  }
+  input:focus, select:focus, textarea:focus { outline: 0; border-color: var(--green); background: var(--white); box-shadow: 0 0 0 4px rgba(23,91,59,.12); }
+  textarea { min-height: 120px; resize: vertical; }
+  .form-note { font-size: .85rem; margin: 14px 0 0; }
+
+  /* =========================================================
+     Footer (black, like pemangkin.my)
+     ========================================================= */
+  footer { background: #000; color: rgba(255,255,255,.7); padding: 90px 0 30px; font-size: .95rem; }
+  footer h2 { color: var(--white); max-width: 640px; margin-bottom: 60px; }
+  .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,.15); }
+  footer h4 { color: var(--white); font-size: 1rem; margin-bottom: 1rem; }
+  footer a:hover { color: var(--mint); }
+  footer .copy { padding-top: 26px; font-size: .85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .to-top {
+    position: fixed; right: 26px; bottom: 26px; z-index: 90; width: 48px; height: 48px; border-radius: 2px;
+    background: var(--green); display: grid; place-items: center; color: var(--white); box-shadow: 0 10px 24px rgba(0,0,0,.2);
+    opacity: 0; transform: translateY(20px); pointer-events: none; transition: .4s var(--ease);
+  }
+  .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top:hover { background: var(--green-dark); }
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: var(--green); transform-origin: left; transform: scaleX(0); z-index: 110; }
+
+  /* =========================================================
+     Scroll-reveal animations (mirrors Elementor's fadeInUp / fadeInRight)
+     ========================================================= */
+  .reveal { opacity: 0; transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); will-change: transform, opacity; }
+  .reveal.up    { transform: translateY(50px); }
+  .reveal.left  { transform: translateX(-60px); }
+  .reveal.right { transform: translateX(60px); }
+  .reveal.zoom  { transform: scale(.92); }
+  .reveal.in    { opacity: 1; transform: none; }
+
+  .load { opacity: 0; transform: translateY(30px); animation: loadIn 1s var(--ease) forwards; animation-delay: var(--d, 0s); }
+  .load.right { transform: translateX(60px); }
+  @keyframes loadIn { to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .reveal, .load { opacity: 1 !important; transform: none !important; }
+    .rotator span { opacity: 0; } .rotator span:first-child { opacity: 1; transform: none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px) {
+    .hero-grid, .about-grid, .tech-grid, .contact-grid, .band-inner, .partner-grid { grid-template-columns: 1fr; gap: 50px; }
+    .band-stats { justify-content: flex-start; }
+    .band-stats .stat:first-child { padding-left: 0; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+    .stats-grid .stat:nth-child(3) { border-left: 0; }
+    .tech-photo { min-height: 380px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; gap: 0; padding: 10px 4%; box-shadow: 0 10px 20px rgba(0,0,0,.08); }
+    .nav-links.open { display: flex; }
+    .nav-links li a { display: block; padding: 12px 0; }
+    .menu-toggle { display: block; }
+  }
+  @media (max-width: 640px) {
+    .services-grid, .form-row, .footer-grid, .lineage, .roles { grid-template-columns: 1fr; }
+    .lineage-arrow { transform: rotate(90deg); justify-self: center; }
+    .handshake { grid-template-columns: 1fr; gap: 10px; }
+    .link-line { transform: rotate(90deg); width: 80px; margin: 10px auto; }
+    .layer { grid-template-columns: 1fr; gap: 8px; }
+    .collage { height: 420px; }
+    .section { padding: 80px 0; }
+    .nav-actions .btn { display: none; }
+    .band-stats { flex-wrap: wrap; gap: 20px 0; }
+    .float-card.c1 { left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="progress"></div>
+
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a href="#hero" class="logo" aria-label="YP Tech home">
+      <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="4" fill="#175b3b"/>
+        <path d="M24 9c6 5 9 10 9 15s-4 9-9 9-9-4-9-9 3-10 9-15z" fill="#d5e7c3"/>
+        <path d="M24 17v16M19 24h10" stroke="#175b3b" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="24" cy="39" r="2" fill="#6f9364"/>
+      </svg>
+      <span class="logo-text">YP Tech<small>A PEMANGKIN COMPANY</small></span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#technology">Technology</a></li>
+      <li><a href="#partner">Partner</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#contact" class="btn">Partner With Us</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== 1. HERO ===================== -->
+  <section id="hero" class="hero" data-section="1" data-title="Hero">
+    <div class="hero-top">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow load" style="--d:.1s">Financing technology · Subsidiary of Yayasan Pemangkin</span>
+          <h1 class="load" style="--d:.25s"><span class="brand">YP Tech</span>: digital infrastructure for
+            <span class="rotator" aria-live="polite"><span class="on">Islamic financing.</span><span>credit intelligence.</span><span>responsible lending.</span></span>
+          </h1>
+          <p class="lead load" style="--d:.45s">We carry Pemangkin's mission of lighting the path where hope begins and poverty ends into the digital economy. Our digital financing, AI credit-scoring and blockchain platforms help financiers, cooperatives and development institutions extend credit faster, fairer and with full transparency.</p>
+          <div class="hero-actions load" style="--d:.6s">
+            <a href="#services" class="btn">Our Solutions <span class="arrow">→</span></a>
+            <a href="#contact" class="btn btn-sage">Contacts</a>
+          </div>
+          <a href="#partner" class="enabler load" style="--d:.75s">
+            <span class="enabler-label">Technology enabler</span>
+            <span class="enabler-name">Global Psytech Sdn Bhd</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="hero-visual load right" style="--d:.4s" id="hero-visual">
+          <div class="hero-photo">
+            <!-- Default illustration; drop a photo at images/hero.jpg to replace it (auto-grayscaled). -->
+            <svg viewBox="0 0 600 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4a4a"/><stop offset="1" stop-color="#1e1e1e"/></linearGradient>
+                <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#175b3b"/><stop offset="1" stop-color="#0f3a26"/></linearGradient>
+              </defs>
+              <rect width="600" height="560" fill="url(#hg)"/>
+              <!-- KL skyline silhouette -->
+              <g fill="#2d2d2d">
+                <rect x="0" y="380" width="600" height="180"/>
+                <rect x="30" y="300" width="60" height="100"/><rect x="100" y="260" width="44" height="140"/>
+                <rect x="430" y="280" width="54" height="120"/><rect x="500" y="320" width="70" height="80"/>
+                <path d="M235 400V170l12-30 12 30v230zM315 400V170l12-30 12 30v230z"/>
+                <rect x="235" y="250" width="104" height="8"/>
+                <path d="M247 140V95M327 140V95" stroke="#2d2d2d" stroke-width="3"/>
+              </g>
+              <g fill="#3a3a3a" opacity=".8">
+                <rect x="160" y="320" width="50" height="80"/><rect x="370" y="300" width="46" height="100"/>
+              </g>
+              <!-- phone -->
+              <g transform="translate(330 170) rotate(8)">
+                <rect width="170" height="320" rx="24" fill="#111"/>
+                <rect x="10" y="14" width="150" height="292" rx="16" fill="#f4f6f2"/>
+                <rect x="24" y="36" width="122" height="74" rx="8" fill="url(#card)"/>
+                <rect x="34" y="50" width="22" height="16" rx="3" fill="#d5e7c3" opacity=".8"/>
+                <rect x="34" y="88" width="70" height="6" rx="3" fill="#d5e7c3" opacity=".7"/>
+                <text x="24" y="134" font-family="Kumbh Sans, Arial" font-size="10" fill="#6b6e71">Financing approved</text>
+                <text x="24" y="156" font-family="Kumbh Sans, Arial" font-weight="700" font-size="20" fill="#000">RM 25,000</text>
+                <text x="24" y="176" font-family="Nunito, Arial" font-size="9" fill="#6b6e71">Tawarruq · 36 months</text>
+                <rect x="24" y="188" width="122" height="6" rx="3" fill="#e4e8e1"/>
+                <rect x="24" y="188" width="96" height="6" rx="3" fill="#6f9364"/>
+                <text x="24" y="212" font-family="Nunito, Arial" font-size="8.5" fill="#6b6e71">Credit score</text>
+                <text x="146" y="212" text-anchor="end" font-family="Kumbh Sans, Arial" font-weight="700" font-size="9" fill="#175b3b">A · Low risk</text>
+                <g font-family="Nunito, Arial" font-size="8.5" fill="#6b6e71">
+                  <text x="24" y="232">Monthly instalment</text><text x="146" y="232" text-anchor="end" fill="#000">RM 812</text>
+                  <text x="24" y="250">Profit rate</text><text x="146" y="250" text-anchor="end" fill="#000">4.9% p.a.</text>
+                </g>
+                <rect x="24" y="270" width="122" height="22" rx="3" fill="#175b3b"/>
+                <text x="85" y="285" text-anchor="middle" font-family="Kumbh Sans, Arial" font-weight="700" font-size="9" fill="#fff" letter-spacing="1">ACCEPT OFFER</text>
+              </g>
+              <!-- hand-held card -->
+              <g transform="translate(70 200) rotate(-10)">
+                <rect width="190" height="118" rx="10" fill="#5a5a5a"/>
+                <rect x="16" y="22" width="30" height="22" rx="4" fill="#8a8a8a"/>
+                <rect x="16" y="78" width="110" height="8" rx="4" fill="#7a7a7a"/>
+                <rect x="16" y="94" width="60" height="6" rx="3" fill="#7a7a7a"/>
+              </g>
+            </svg>
+            <img src="images/hero.jpg" alt="" onerror="this.remove()">
+          </div>
+          <div class="float-card c1" data-depth="18">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></span>
+            <span>Financing approved<small>Decision in 4 min</small></span>
+          </div>
+          <div class="float-card c3" data-depth="-14">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>
+            <span>Credit risk: Low<small>Behavioural score 0.03</small></span>
+          </div>
+          <div class="float-card c2" data-depth="10">
+            <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M10 6.5h4v7.5"/></svg></span>
+            <span>Block #4,812,097<small>Hash-anchored audit trail</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-band">
+      <div class="band-art" aria-hidden="true">
+        <svg viewBox="0 0 1400 260" preserveAspectRatio="xMidYMid slice">
+          <path class="flow" d="M0 180 C 200 120, 360 220, 560 150 S 900 60, 1100 140 S 1300 200, 1400 120"/>
+          <path class="flow alt" d="M0 90 C 240 160, 420 40, 640 110 S 980 220, 1180 90 S 1340 60, 1400 80"/>
+          <path class="flow" d="M0 230 C 300 200, 520 250, 760 210 S 1100 170, 1400 220"/>
+          <g>
+            <circle class="node" cx="560" cy="150" r="5"/><circle class="pulse" cx="560" cy="150" r="5"/>
+            <circle class="node" cx="1100" cy="140" r="5"/><circle class="pulse" cx="1100" cy="140" r="5" style="animation-delay:-1s"/>
+            <circle class="node" cx="640" cy="110" r="4"/><circle class="pulse" cx="640" cy="110" r="4" style="animation-delay:-1.8s"/>
+            <circle class="node" cx="1180" cy="90" r="4"/><circle class="node" cx="760" cy="210" r="4"/>
+            <circle class="pulse" cx="760" cy="210" r="4" style="animation-delay:-.6s"/>
+          </g>
+        </svg>
+      </div>
+      <div class="container band-inner">
+        <div class="reveal up">
+          <h3>Responsible financing with amanah at its core</h3>
+          <p>Every application assessed fairly, every ringgit disbursed traceably. We build financing infrastructure that borrowers, financiers and regulators can trust.</p>
+          <a href="#about" class="btn">Learn More <span class="arrow">→</span></a>
+        </div>
+        <div class="band-stats reveal up" style="--d:.15s">
+          <div class="stat"><strong data-count="99.95" data-decimals="2" data-suffix="%">99.95%</strong><span>Target uptime</span></div>
+          <div class="stat"><strong data-count="5" data-prefix="&lt; " data-suffix=" min">&lt; 5 min</strong><span>Financing decision</span></div>
+          <div class="stat"><strong>Shariah</strong><span>Compliant by design</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. ABOUT ===================== -->
+  <section id="about" class="about" data-section="2" data-title="About YP Tech">
+    <div class="section">
+      <div class="container about-grid">
+        <div class="collage">
+          <div class="photo p1 reveal left">
+            <svg viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="400" height="440" fill="#3c3c3c"/>
+              <circle cx="300" cy="90" r="70" fill="#5c5c5c"/>
+              <g fill="#262626"><rect y="300" width="400" height="140"/><path d="M40 300v-90h50v90zM110 300v-140h40v140zM170 300V110l14-30 14 30v190zM230 300V110l14-30 14 30v190zM280 300v-120h46v120zM340 300v-70h50v70z"/></g>
+              <rect x="170" y="190" width="88" height="6" fill="#262626"/>
+              <g fill="#4b4b4b"><rect x="120" y="180" width="6" height="8"/><rect x="134" y="200" width="6" height="8"/><rect x="290" y="200" width="6" height="8"/><rect x="304" y="220" width="6" height="8"/><rect x="50" y="230" width="6" height="8"/><rect x="66" y="250" width="6" height="8"/></g>
+            </svg>
+            <img src="images/about-1.jpg" alt="" onerror="this.remove()">
+          </div>
+          <div class="photo p2 reveal up" style="--d:.2s">
+            <svg viewBox="0 0 360 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="360" height="300" fill="#585858"/>
+              <g stroke="#9a9a9a" stroke-width="1.5" fill="none" opacity=".7">
+                <path d="M60 80L150 150L260 70M150 150L120 240M150 150L290 210M260 70L290 210"/>
+              </g>
+              <g fill="#d5e7c3"><circle cx="60" cy="80" r="8"/><circle cx="260" cy="70" r="8"/><circle cx="120" cy="240" r="8"/><circle cx="290" cy="210" r="8"/></g>
+              <circle cx="150" cy="150" r="16" fill="#175b3b" stroke="#d5e7c3" stroke-width="3"/>
+            </svg>
+            <img src="images/about-2.jpg" alt="" onerror="this.remove()">
+          </div>
+          <div class="since reveal up" style="--d:.35s">BUILT ON TRUST SINCE<b>2004</b></div>
+        </div>
+
+        <div>
+          <span class="eyebrow reveal up">Who we are</span>
+          <h2 class="reveal up" style="--d:.08s">Our story</h2>
+          <p class="reveal up" style="--d:.16s">Yayasan Pemangkin's journey began in 2004, responding to the Aceh tsunami and going on to support thousands of students, families and volunteers across Malaysia. YP Tech is the foundation's dedicated fintech subsidiary, created to bring that impact to the financing industry.</p>
+          <p class="reveal up" style="--d:.24s">We turn a twenty-year heritage of trust and accountability into enterprise-grade financial technology. Our platforms digitise financing from application to repayment, assess applicants fairly, including those with thin credit files, and prove where every ringgit goes, for Pemangkin's own programmes and for partner financiers.</p>
+
+          <div class="lineage reveal up" style="--d:.32s">
+            <div class="lineage-node"><h3>Yayasan Pemangkin</h3><p>Parent foundation. Sets governance, ethics and the social-impact mandate.</p></div>
+            <div class="lineage-arrow" aria-hidden="true"><svg viewBox="0 0 40 16"><path d="M0 8h34M28 2l7 6-7 6"/></svg></div>
+            <div class="lineage-node"><h3>YP Tech</h3><p>Fintech subsidiary. Builds and operates digital financing infrastructure.</p></div>
+            <div class="lineage-node partner-node"><span class="tag-sm">Technology enabler</span><h3>Global Psytech Sdn Bhd</h3><p>Behavioural and data analytics partner powering YP Tech's credit-scoring and AI capabilities.</p></div>
+          </div>
+          <a href="#services" class="btn reveal up" style="--d:.4s">What We Do <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-band">
+      <div class="container stats-grid">
+        <div class="stat reveal up"><svg viewBox="0 0 54 54" aria-hidden="true"><rect x="8" y="14" width="38" height="26" rx="3"/><path d="M8 22h38M14 33h10"/></svg><strong data-count="6" data-suffix="+">6+</strong><span>Financing solution modules</span></div>
+        <div class="stat reveal up" style="--d:.1s"><svg viewBox="0 0 54 54" aria-hidden="true"><path d="M27 6l17 8v12c0 11-7.5 18-17 22-9.5-4-17-11-17-22V14l17-8z"/><path d="M19 27l6 6 11-12"/></svg><strong data-count="24" data-suffix="/7">24/7</strong><span>AI risk monitoring</span></div>
+        <div class="stat reveal up" style="--d:.2s"><svg viewBox="0 0 54 54" aria-hidden="true"><rect x="6" y="6" width="16" height="16"/><rect x="32" y="6" width="16" height="16"/><rect x="19" y="32" width="16" height="16"/><path d="M22 14h10M14 22v10h5M40 22v10h-5"/></svg><strong data-count="100" data-suffix="%">100%</strong><span>Traceable disbursements</span></div>
+        <div class="stat reveal up" style="--d:.3s"><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="18" r="8"/><path d="M11 46c0-9 7-15 16-15s16 6 16 15"/></svg><strong data-count="20" data-suffix="+">20+</strong><span>Years of community trust</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. SERVICES ===================== -->
+  <section id="services" class="section services" data-section="3" data-title="Fintech Services">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow reveal up">What we deliver</span>
+        <h2 class="reveal up" style="--d:.08s">Fintech solutions for the financing industry</h2>
+        <p class="reveal up" style="--d:.16s">Modular, API-first services for banks, development financial institutions, cooperatives and financing companies, deployed on their own or as one financing operating layer.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service reveal up">
+          <div class="icon"><svg viewBox="0 0 64 64"><rect x="10" y="6" width="34" height="46" rx="3"/><path d="M18 18h18M18 26h18M18 34h10"/><circle cx="46" cy="46" r="12"/><path d="M41 46l4 4 7-8"/></svg></div>
+          <h3>Digital Financing &amp; Loan Origination</h3>
+          <p>An end-to-end digital financing journey, from online application to automated underwriting, e-agreement and same-day disbursement.</p>
+          <ul><li>Web &amp; mobile financing applications</li><li>Automated underwriting &amp; decisioning</li><li>e-Agreement, e-stamping &amp; instant disbursement</li></ul>
+        </article>
+
+        <article class="service reveal up" style="--d:.1s">
+          <div class="icon"><svg viewBox="0 0 64 64"><circle cx="24" cy="22" r="12"/><path d="M18 22c2-4 10-4 12 0M24 10v4"/><path d="M8 56c1-10 7-16 16-16 4 0 7 1 10 3"/><path d="M38 56V44M46 56V36M54 56V28"/></svg></div>
+          <h3>AI &amp; Behavioural Credit Scoring</h3>
+          <p>Credit assessment that looks beyond bureau data, combining behavioural, psychometric and alternative data in models powered by Global Psytech.</p>
+          <ul><li>Psychometric &amp; behavioural scoring</li><li>Alternative-data risk models for thin-file applicants</li><li>Explainable, auditable credit decisions</li></ul>
+        </article>
+
+        <article class="service reveal up" style="--d:.2s">
+          <div class="icon"><svg viewBox="0 0 64 64"><path d="M14 30c0-8 8-14 18-14s18 6 18 14"/><path d="M32 6v10M10 30h44v6H10zM14 36v20M50 36v20M24 36v20M40 36v20M8 56h48"/></svg></div>
+          <h3>Islamic &amp; Cooperative Financing</h3>
+          <p>A Shariah-compliant product engine for financiers and cooperatives, with configurable contracts, profit calculation and Shariah audit trails.</p>
+          <ul><li>Murabahah, tawarruq, ijarah &amp; qard hasan</li><li>Cooperative member-financing modules</li><li>Microfinancing for asnaf &amp; micro-entrepreneurs</li></ul>
+        </article>
+
+        <article class="service reveal up">
+          <div class="icon"><svg viewBox="0 0 64 64"><rect x="6" y="12" width="52" height="40" rx="3"/><path d="M6 22h52M14 34h12M14 42h20"/><circle cx="46" cy="38" r="7"/><path d="M46 34v4l3 2"/></svg></div>
+          <h3>Financing Management &amp; Collections</h3>
+          <p>Servicing for the full financing lifecycle, with automated repayments, early-warning alerts and digital collections workflows.</p>
+          <ul><li>Auto-debit, DuitNow &amp; FPX repayments</li><li>Early-warning delinquency prediction</li><li>Restructuring &amp; collections case management</li></ul>
+        </article>
+
+        <article class="service reveal up" style="--d:.1s">
+          <div class="icon"><svg viewBox="0 0 64 64"><rect x="6" y="6" width="18" height="18" rx="2"/><rect x="40" y="6" width="18" height="18" rx="2"/><rect x="23" y="40" width="18" height="18" rx="2"/><path d="M24 15h16M15 24v12h8M49 24v12h-8"/></svg></div>
+          <h3>Blockchain Financing Infrastructure</h3>
+          <p>Permissioned ledgers that keep an immutable record of every financing agreement, disbursement and repayment for financiers, auditors and regulators.</p>
+          <ul><li>Tamper-proof financing records</li><li>Smart-contract disbursement rules</li><li>Tokenised sukuk &amp; asset-backed financing</li></ul>
+        </article>
+
+        <article class="service reveal up" style="--d:.2s">
+          <div class="icon"><svg viewBox="0 0 64 64"><path d="M32 6l20 9v14c0 13-8.5 22-20 27-11.5-5-20-14-20-27V15l20-9z"/><circle cx="32" cy="30" r="7"/><path d="M32 23v-5M32 42v-5M25 30h-5M44 30h-5"/></svg></div>
+          <h3>Fraud Prevention &amp; e-KYC</h3>
+          <p>Fast, compliant onboarding and real-time protection against application fraud, identity theft and money laundering.</p>
+          <ul><li>MyKad e-KYC, liveness &amp; face matching</li><li>AI application-fraud detection</li><li>AML/CFT screening &amp; monitoring</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. TECHNOLOGY ===================== -->
+  <section id="technology" class="section tech" data-section="4" data-title="Technology Stack">
+    <div class="container tech-grid">
+      <div class="tech-photo reveal left">
+        <div class="photo">
+          <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="500" height="620" fill="#2e2e2e"/>
+            <g fill="#3d3d3d">
+              <rect x="40" y="60" width="120" height="500" rx="4"/><rect x="190" y="60" width="120" height="500" rx="4"/><rect x="340" y="60" width="120" height="500" rx="4"/>
+            </g>
+            <g fill="#555">
+              <rect x="56" y="90" width="88" height="14" rx="2"/><rect x="56" y="120" width="88" height="14" rx="2"/><rect x="56" y="150" width="88" height="14" rx="2"/><rect x="56" y="180" width="88" height="14" rx="2"/><rect x="56" y="210" width="88" height="14" rx="2"/>
+              <rect x="206" y="90" width="88" height="14" rx="2"/><rect x="206" y="120" width="88" height="14" rx="2"/><rect x="206" y="150" width="88" height="14" rx="2"/><rect x="206" y="180" width="88" height="14" rx="2"/>
+              <rect x="356" y="90" width="88" height="14" rx="2"/><rect x="356" y="120" width="88" height="14" rx="2"/><rect x="356" y="150" width="88" height="14" rx="2"/><rect x="356" y="180" width="88" height="14" rx="2"/><rect x="356" y="210" width="88" height="14" rx="2"/>
+              <rect x="56" y="260" width="88" height="14" rx="2"/><rect x="206" y="260" width="88" height="14" rx="2"/><rect x="356" y="260" width="88" height="14" rx="2"/>
+              <rect x="56" y="290" width="88" height="14" rx="2"/><rect x="206" y="290" width="88" height="14" rx="2"/><rect x="356" y="290" width="88" height="14" rx="2"/>
+            </g>
+            <g class="leds">
+              <circle cx="136" cy="97" r="3" fill="#d5e7c3"/><circle cx="286" cy="127" r="3" fill="#d5e7c3"/><circle cx="436" cy="157" r="3" fill="#d5e7c3"/>
+              <circle cx="136" cy="187" r="3" fill="#6f9364"/><circle cx="286" cy="267" r="3" fill="#d5e7c3"/><circle cx="436" cy="297" r="3" fill="#6f9364"/>
+            </g>
+            <rect y="420" width="500" height="200" fill="url(#techfade)"/>
+            <defs><linearGradient id="techfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e2e2e" stop-opacity="0"/><stop offset="1" stop-color="#1a1a1a"/></linearGradient></defs>
+          </svg>
+          <img src="images/tech.jpg" alt="" onerror="this.remove()">
+        </div>
+        <div class="tag"><b>6 layers</b>Enabled by Global Psytech</div>
+      </div>
+
+      <div>
+        <span class="eyebrow reveal up">Under the hood</span>
+        <h2 class="reveal up" style="--d:.08s">Technology stack</h2>
+        <p class="reveal up" style="--d:.16s">Every layer is engineered for resilience, horizontal scale and regulatory-grade observability, from the customer interface down to the ledger.</p>
+        <div class="stack">
+          <div class="layer reveal right"><h3><small>LAYER 01</small>Experience</h3><div class="chips"><span class="chip">React / Next.js</span><span class="chip">Flutter</span><span class="chip">TypeScript</span><span class="chip">Design System</span></div></div>
+          <div class="layer reveal right" style="--d:.06s"><h3><small>LAYER 02</small>API &amp; Integration</h3><div class="chips"><span class="chip">REST / GraphQL</span><span class="chip">OAuth 2.0 / OIDC</span><span class="chip">API Gateway</span><span class="chip">ISO 20022</span></div></div>
+          <div class="layer reveal right" style="--d:.12s"><h3><small>LAYER 03</small>Core Services</h3><div class="chips"><span class="chip">Loan Origination Engine</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Node.js</span><span class="chip">Apache Kafka</span><span class="chip">Event Sourcing</span></div></div>
+          <div class="layer reveal right" style="--d:.18s"><h3><small>LAYER 04</small>AI &amp; Risk Intelligence</h3><div class="chips"><span class="chip">Behavioural Scoring (Global Psytech)</span><span class="chip">PyTorch</span><span class="chip">XGBoost</span><span class="chip">Graph Analytics</span><span class="chip">Explainable AI</span></div></div>
+          <div class="layer reveal right" style="--d:.24s"><h3><small>LAYER 05</small>Ledger &amp; Blockchain</h3><div class="chips"><span class="chip">Hyperledger Fabric</span><span class="chip">EVM Smart Contracts</span><span class="chip">PostgreSQL</span><span class="chip">Hash Anchoring</span></div></div>
+          <div class="layer reveal right" style="--d:.3s"><h3><small>LAYER 06</small>Cloud &amp; Security</h3><div class="chips"><span class="chip">Kubernetes</span><span class="chip">Terraform</span><span class="chip">HSM / KMS</span><span class="chip">Zero-Trust</span><span class="chip">SIEM</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Digital Financing</span><span>Islamic Financing</span><span>Behavioural Credit Scoring</span><span>Loan Origination</span><span>Blockchain Ledger</span><span>Fraud Prevention</span><span>e-KYC</span>
+        <span>Digital Financing</span><span>Islamic Financing</span><span>Behavioural Credit Scoring</span><span>Loan Origination</span><span>Blockchain Ledger</span><span>Fraud Prevention</span><span>e-KYC</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="compliance reveal up">
+        <span class="badge">PCI DSS-aligned</span><span class="badge">ISO/IEC 27001 framework</span><span class="badge">BNM RMiT-ready</span><span class="badge">PDPA 2010 compliant</span><span class="badge">Shariah governance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. TECHNOLOGY PARTNER ===================== -->
+  <section id="partner" class="section partner" data-section="5" data-title="Technology Partner">
+    <div class="partner-bg" aria-hidden="true"></div>
+    <div class="container partner-grid">
+      <div>
+        <span class="eyebrow reveal up">Technology enabler</span>
+        <h2 class="reveal up" style="--d:.08s">In partnership with Global Psytech Sdn Bhd</h2>
+        <p class="reveal up" style="--d:.16s">Global Psytech Sdn Bhd is a Cyberjaya-based data technology company that specialises in behavioural and data analytics, including behavioural credit scoring and intelligent assessment. As YP Tech's technology enabler, it supplies the analytics engine and engineering expertise behind our credit decisioning and AI risk capabilities.</p>
+        <p class="reveal up" style="--d:.22s">Together we bring inclusive, data-driven financing to applicants that traditional credit models often overlook.</p>
+        <a href="https://www.globalpsytech.com/" target="_blank" rel="noopener" class="btn btn-mint reveal up" style="--d:.3s">Visit Global Psytech <span class="arrow">→</span></a>
+      </div>
+
+      <div class="partner-visual reveal zoom" style="--d:.15s">
+        <div class="handshake">
+          <div class="party">
+            <svg class="party-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="4" fill="#d5e7c3"/><path d="M24 9c6 5 9 10 9 15s-4 9-9 9-9-4-9-9 3-10 9-15z" fill="#175b3b"/><path d="M24 17v16M19 24h10" stroke="#d5e7c3" stroke-width="2.4" stroke-linecap="round"/></svg>
+            <h3>YP Tech</h3><p>Fintech subsidiary</p>
+          </div>
+          <div class="link-line" aria-hidden="true"><svg viewBox="0 0 160 40"><path d="M0 20H160"/><circle class="dot-run" cx="0" cy="20" r="5"/></svg></div>
+          <div class="party">
+            <span class="party-word">Global<br>Psytech</span>
+            <h3>Global Psytech Sdn Bhd</h3><p>Technology enabler</p>
+          </div>
+        </div>
+        <div class="roles">
+          <div class="role"><h3>Behavioural credit scoring</h3><p>Psychometric and behavioural models for fair, inclusive credit assessment.</p></div>
+          <div class="role"><h3>AI &amp; data analytics</h3><p>Risk analytics, model governance and explainable AI.</p></div>
+          <div class="role"><h3>Platform engineering</h3><p>Joint product development, integration and support.</p></div>
+          <div class="role"><h3>Research &amp; innovation</h3><p>Ongoing R&amp;D on alternative data for financial inclusion.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. CONTACT ===================== -->
+  <section id="contact" class="section contact" data-section="6" data-title="Contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow reveal up">Get in touch</span>
+        <h2 class="reveal up" style="--d:.08s">Let's build the future of finance together</h2>
+        <p class="reveal up" style="--d:.16s">Whether you are a bank, development financial institution, cooperative or financing company, our solutions team is ready to scope your next initiative.</p>
+        <div class="item reveal up" style="--d:.2s"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24s8-7 8-13a8 8 0 10-16 0c0 6 8 13 8 13z"/><circle cx="13" cy="11" r="3"/></svg><div><h3>Address</h3><p>Wisma Koperasi Iman, No. 17 Jalan SG 3/4, Batu Caves 68100, Selangor Darul Ehsan</p></div></div>
+        <div class="item reveal up" style="--d:.26s"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="6" width="20" height="14" rx="2"/><path d="M3 8l10 7 10-7"/></svg><div><h3>Say hello</h3><p>hello@yptech.my</p></div></div>
+        <div class="item reveal up" style="--d:.32s"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10"/><path d="M13 7v6l4 3"/></svg><div><h3>Business hours</h3><p>Monday to Friday, 9:00 AM – 6:00 PM (MYT)</p></div></div>
+        <div class="item reveal up" style="--d:.38s"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 3c4 3 6 6 6 9a6 6 0 01-12 0c0-3 2-6 6-9z"/><path d="M13 9v8M10 13h6"/></svg><div><h3>Parent organisation</h3><p><a href="https://pemangkin.my/" target="_blank" rel="noopener">Yayasan Pemangkin · pemangkin.my</a></p></div></div>
+      </div>
+
+      <form id="contact-form" class="reveal right" novalidate>
+        <h3>Send us a brief</h3>
+        <div class="form-row">
+          <div><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Ahmad Rahman" required></div>
+          <div><label for="org">Organisation</label><input id="org" name="org" type="text" placeholder="Company / Institution"></div>
+        </div>
+        <div class="form-row">
+          <div><label for="email">Work Email</label><input id="email" name="email" type="email" placeholder="you@company.com" required></div>
+          <div><label for="interest">Area of Interest</label>
+            <select id="interest" name="interest">
+              <option>Digital Financing Platform</option><option>AI &amp; Behavioural Credit Scoring</option><option>Islamic &amp; Cooperative Financing</option>
+              <option>Financing Management &amp; Collections</option><option>Blockchain Financing</option><option>Fraud Prevention &amp; e-KYC</option><option>Partnership / Other</option>
+            </select>
+          </div>
+        </div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your project or requirements"></textarea>
+        <button type="submit" class="btn">Send Enquiry <span class="arrow">→</span></button>
+        <p class="form-note" id="form-note">We typically respond within one business day.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <h2>Building a fairer financing future for community</h2>
+    <div class="footer-grid">
+      <div><h4>Address</h4><p>Wisma Koperasi Iman,<br>No. 17 Jalan SG 3/4,<br>Batu Caves 68100,<br>Selangor Darul Ehsan</p></div>
+      <div><h4>Say Hello</h4><p><a href="mailto:hello@yptech.my">hello@yptech.my</a></p></div>
+      <div><h4>Explore</h4><p><a href="#about">About</a><br><a href="#services">Services</a><br><a href="#technology">Technology</a><br><a href="#contact">Contact</a></p></div>
+      <div><h4>Group &amp; Partners</h4><p><a href="https://pemangkin.my/" target="_blank" rel="noopener">Yayasan Pemangkin</a><br>Technology enabler: <a href="https://www.globalpsytech.com/" target="_blank" rel="noopener">Global Psytech Sdn Bhd</a></p></div>
+    </div>
+    <div class="copy"><span>YP Tech © 2026. A subsidiary of Yayasan Pemangkin · Technology enabler: Global Psytech Sdn Bhd. All Rights Reserved.</span><span>Privacy · Terms · Security Disclosure</span></div>
+  </div>
+</footer>
+
+<a href="#hero" class="to-top" id="to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
+
+<script>
+(function () {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const header = document.getElementById('header');
+  const toTop = document.getElementById('to-top');
+  const progress = document.getElementById('progress');
+
+  // Header shrink, back-to-top, scroll progress
+  function onScroll() {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 40);
+    toTop.classList.toggle('show', y > 600);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  const toggle = document.getElementById('menu-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Active nav link per section
+  const navMap = {};
+  links.querySelectorAll('a').forEach(a => navMap[a.getAttribute('href').slice(1)] = a);
+  const navObs = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting && navMap[e.target.id]) {
+      Object.values(navMap).forEach(a => a.classList.remove('active'));
+      navMap[e.target.id].classList.add('active');
+    }
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
+
+  // Count-up numbers (final values are already in the HTML)
+  function countUp(el) {
+    const end = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.decimals || '0', 10);
+    const pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    const t0 = performance.now(), dur = 1800;
+    (function tick(t) {
+      const p = Math.min((t - t0) / dur, 1);
+      const v = end * (1 - Math.pow(1 - p, 3));
+      el.textContent = pre + v.toFixed(dec) + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  // Scroll reveal
+  if (reduce || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  } else {
+    const obs = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(countUp);
+      obs.unobserve(e.target);
+    }), { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  }
+
+  // Rotating hero word
+  const words = document.querySelectorAll('.rotator span');
+  if (!reduce && words.length > 1) {
+    let i = 0;
+    setInterval(() => {
+      const cur = words[i]; i = (i + 1) % words.length; const next = words[i];
+      cur.classList.remove('on'); cur.classList.add('off');
+      next.classList.remove('off'); next.classList.add('on');
+      setTimeout(() => cur.classList.remove('off'), 600);
+    }, 2600);
+  }
+
+  // Mouse parallax on hero floating cards
+  const visual = document.getElementById('hero-visual');
+  if (!reduce && matchMedia('(pointer: fine)').matches) {
+    const cards = visual.querySelectorAll('[data-depth]');
+    document.querySelector('.hero-top').addEventListener('mousemove', e => {
+      const r = visual.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) / r.width;
+      const y = (e.clientY - r.top - r.height / 2) / r.height;
+      cards.forEach(c => { const d = +c.dataset.depth; c.style.translate = (x * d) + 'px ' + (y * d) + 'px'; });
+    });
+  }
+
+  // Contact form (front-end only - connect to your backend)
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const note = document.getElementById('form-note');
+    if (!this.checkValidity()) {
+      note.textContent = 'Please enter your name and a valid work email.';
+      note.style.color = '#b42318';
+      return;
+    }
+    note.textContent = 'Thank you. Our team will be in touch shortly.';
+    note.style.color = '#175b3b';
+    this.reset();
+  });
+})();
+</script>
+</body>
+</html>
