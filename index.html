@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YP Tech | Financing Technology by Yayasan Pemangkin</title>
-<meta name="description" content="YP Tech is the fintech subsidiary of Yayasan Pemangkin, building digital financing, AI credit-scoring and blockchain infrastructure for the financing industry, with technology enabler Global Psytech Sdn Bhd.">
+<meta name="description" content="YP Tech is the fintech subsidiary of Yayasan Pemangkin, building digital financing, data analytics and blockchain infrastructure for the financing industry, with technology enabler Global Psytech Sdn Bhd.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -188,12 +188,15 @@
   .lineage-arrow svg { width: 40px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; }
   .lineage-arrow path { stroke-dasharray: 4 5; animation: flow 1.8s linear infinite; }
 
-  .stats-band { background: var(--sage-deep); color: var(--white); padding: 70px 0; }
+  .impact { background: var(--sage); color: var(--white); padding: 80px 0 90px; }
+  .impact-head { text-align: center; margin-bottom: 44px; }
+  .impact-head .eyebrow { color: var(--cream); }
+  .impact-head p { color: rgba(255,255,255,.85); margin: 0 auto; max-width: 600px; }
   .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
   .stats-grid .stat { text-align: center; padding: 10px 20px; border-left: 1px solid rgba(255,255,255,.25); }
   .stats-grid .stat:first-child { border-left: 0; }
   .stats-grid svg { width: 54px; height: 54px; stroke: var(--white); fill: none; stroke-width: 1.4; margin: 0 auto 10px; display: block; }
-  .stats-grid strong { display: block; font-family: var(--head-font); font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--cream); line-height: 1.1; }
+  .stats-grid strong { display: block; font-family: var(--head-font); font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--white); line-height: 1.1; }
   .stats-grid span { font-family: var(--head-font); font-weight: 600; font-size: .95rem; color: rgba(255,255,255,.85); }
 
   /* =========================================================
@@ -201,7 +204,7 @@
      ========================================================= */
   .services { background: var(--white); }
   .section-head { max-width: 760px; margin: 0 auto 64px; }
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
   .service {
     text-align: center; padding: 42px 32px 36px; border: 1px solid transparent; border-radius: 4px;
     background: var(--white); transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s;
@@ -219,39 +222,6 @@
   .service li { font-size: .9rem; color: #3b3e40; padding: .25rem 0; }
   .service li::before { content: "•"; color: var(--sage); font-weight: 700; margin-right: .5rem; }
 
-  /* =========================================================
-     4. Technology  ("Programs & schemes" grey band)
-     ========================================================= */
-  .tech { background: var(--grey-bg); overflow: hidden; }
-  .tech-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
-  .tech-photo { position: relative; height: 100%; min-height: 520px; }
-  .tech-photo .photo { inset: 0; }
-  .tech-photo .tag {
-    position: absolute; left: -14px; bottom: 34px; z-index: 2; background: var(--green); color: var(--white);
-    font-family: var(--head-font); font-weight: 700; padding: 16px 22px; font-size: .9rem; box-shadow: 0 14px 30px rgba(0,0,0,.2);
-  }
-  .tech-photo .tag b { display: block; font-size: 1.8rem; line-height: 1; }
-  .stack { display: grid; gap: 12px; margin-top: 10px; }
-  .layer {
-    display: grid; grid-template-columns: 190px 1fr; gap: 18px; align-items: center;
-    background: var(--white); padding: 16px 20px; border-radius: 3px; border-left: 4px solid var(--sage);
-    transition: border-color .35s, transform .35s var(--ease), box-shadow .35s;
-  }
-  .layer:hover { border-left-color: var(--green); transform: translateX(6px); box-shadow: 0 10px 24px rgba(0,0,0,.06); }
-  .layer h3 { margin: 0; font-size: .98rem; }
-  .layer h3 small { display: block; font-size: .68rem; letter-spacing: .14em; color: var(--sage); margin-bottom: 2px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .chip { font-size: .8rem; padding: 4px 11px; border-radius: 2px; background: var(--mint-soft); color: var(--green-dark); font-weight: 600; }
-
-  .marquee { margin-top: 70px; border-top: 1px solid rgba(0,0,0,.08); border-bottom: 1px solid rgba(0,0,0,.08); padding: 22px 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-  .marquee-track { display: flex; gap: 56px; width: max-content; animation: marquee 32s linear infinite; }
-  .marquee:hover .marquee-track { animation-play-state: paused; }
-  .marquee-track span { font-family: var(--head-font); font-weight: 700; font-size: 1.15rem; color: var(--green); white-space: nowrap; display: flex; align-items: center; gap: 56px; }
-  .marquee-track span::after { content: "✦"; color: var(--sage); font-size: .8rem; }
-  @keyframes marquee { to { transform: translateX(-50%); } }
-  .compliance { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 34px; }
-  .badge { font-family: var(--head-font); font-weight: 600; font-size: .82rem; padding: 9px 16px; border: 1px solid var(--green); color: var(--green); border-radius: 2px; background: rgba(255,255,255,.5); }
-
   .enabler {
     display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; padding: 10px 16px 10px 12px;
     background: rgba(255,255,255,.6); border-left: 3px solid var(--green); border-radius: 2px;
@@ -265,7 +235,7 @@
   .tag-sm { display: block; font-family: var(--head-font); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin-bottom: 2px; }
 
   /* =========================================================
-     5. Technology partner (Global Psytech)
+     6. Technology partner (Global Psytech)
      ========================================================= */
   .partner { background: var(--green-dark); color: var(--white); overflow: hidden; }
   .partner-bg { position: absolute; inset: 0; opacity: .35; pointer-events: none;
@@ -294,7 +264,35 @@
   .role p { font-size: .84rem; margin: 0; line-height: 1.55; }
 
   /* =========================================================
-     6. Contact
+     CTA band ("Every dollar counts" style) and News
+     ========================================================= */
+  .cta { background: var(--mint); overflow: hidden; }
+  .cta-inner { position: relative; max-width: 760px; }
+  .cta p { color: #3f4a44; margin-bottom: 1.8rem; }
+  .cta-shapes span { position: absolute; border-radius: 50%; background: var(--sage); opacity: .25; animation: drift 9s ease-in-out infinite; }
+  .cta-shapes span:nth-child(1) { width: 120px; height: 120px; left: 6%; top: 20%; }
+  .cta-shapes span:nth-child(2) { width: 60px; height: 60px; left: 18%; bottom: 14%; background: var(--green); animation-delay: -3s; }
+  .cta-shapes span:nth-child(3) { width: 150px; height: 150px; right: 5%; top: 12%; animation-delay: -5s; }
+  .cta-shapes span:nth-child(4) { width: 46px; height: 46px; right: 20%; bottom: 18%; background: var(--green); animation-delay: -1s; }
+  .cta-shapes span:nth-child(5) { width: 24px; height: 24px; left: 46%; top: 10%; background: var(--green-dark); animation-delay: -6s; }
+  @keyframes drift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(14px,-18px) scale(1.08); } }
+
+  .news { background: var(--white); }
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .news-card { position: relative; }
+  .news-img { position: relative; aspect-ratio: 4 / 2.7; overflow: hidden; border-radius: 2px; background: #333; margin-bottom: 18px; }
+  .news-img svg, .news-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+  .news-img img { filter: grayscale(.2); }
+  .news-card:hover .news-img svg, .news-card:hover .news-img img { transform: scale(1.06); }
+  .news-meta { font-family: var(--head-font); font-weight: 700; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--head); margin-bottom: .4rem; }
+  .news-card h3 { font-size: 1.2rem; line-height: 1.3; margin-bottom: .7rem; transition: color .3s; }
+  .news-card:hover h3 { color: var(--green); }
+  .read-more { font-family: var(--head-font); font-weight: 700; font-size: .85rem; color: var(--green); display: inline-flex; gap: .4rem; }
+  .read-more .arrow { transition: transform .35s var(--ease); }
+  .read-more:hover .arrow { transform: translateX(4px); }
+
+  /* =========================================================
+     8. Contact
      ========================================================= */
   .contact { background: var(--paper); }
   .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 70px; align-items: start; }
@@ -355,13 +353,12 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 1024px) {
-    .hero-grid, .about-grid, .tech-grid, .contact-grid, .band-inner, .partner-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero-grid, .about-grid, .contact-grid, .band-inner, .partner-grid { grid-template-columns: 1fr; gap: 50px; }
     .band-stats { justify-content: flex-start; }
     .band-stats .stat:first-child { padding-left: 0; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
+    .services-grid, .news-grid { grid-template-columns: 1fr 1fr; }
     .stats-grid { grid-template-columns: 1fr 1fr; row-gap: 40px; }
     .stats-grid .stat:nth-child(3) { border-left: 0; }
-    .tech-photo { min-height: 380px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; gap: 0; padding: 10px 4%; box-shadow: 0 10px 20px rgba(0,0,0,.08); }
     .nav-links.open { display: flex; }
@@ -369,11 +366,10 @@
     .menu-toggle { display: block; }
   }
   @media (max-width: 640px) {
-    .services-grid, .form-row, .footer-grid, .lineage, .roles { grid-template-columns: 1fr; }
+    .services-grid, .news-grid, .form-row, .footer-grid, .lineage, .roles { grid-template-columns: 1fr; }
     .lineage-arrow { transform: rotate(90deg); justify-self: center; }
     .handshake { grid-template-columns: 1fr; gap: 10px; }
     .link-line { transform: rotate(90deg); width: 80px; margin: 10px auto; }
-    .layer { grid-template-columns: 1fr; gap: 8px; }
     .collage { height: 420px; }
     .section { padding: 80px 0; }
     .nav-actions .btn { display: none; }
@@ -400,8 +396,8 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#technology">Technology</a></li>
       <li><a href="#partner">Partner</a></li>
+      <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -420,9 +416,9 @@
         <div>
           <span class="eyebrow load" style="--d:.1s">Financing technology · Subsidiary of Yayasan Pemangkin</span>
           <h1 class="load" style="--d:.25s"><span class="brand">YP Tech</span>: digital infrastructure for
-            <span class="rotator" aria-live="polite"><span class="on">Islamic financing.</span><span>credit intelligence.</span><span>responsible lending.</span></span>
+            <span class="rotator" aria-live="polite"><span class="on">digital financing.</span><span>faster approvals.</span><span>transparent lending.</span></span>
           </h1>
-          <p class="lead load" style="--d:.45s">We carry Pemangkin's mission of lighting the path where hope begins and poverty ends into the digital economy. Our digital financing, AI credit-scoring and blockchain platforms help financiers, cooperatives and development institutions extend credit faster, fairer and with full transparency.</p>
+          <p class="lead load" style="--d:.45s">We carry Pemangkin's mission of lighting the path where hope begins and poverty ends into the digital economy. Our digital financing, data analytics and blockchain platforms help financiers, cooperatives and development institutions extend financing faster, fairer and with full transparency.</p>
           <div class="hero-actions load" style="--d:.6s">
             <a href="#services" class="btn">Our Solutions <span class="arrow">→</span></a>
             <a href="#contact" class="btn btn-sage">Contacts</a>
@@ -464,14 +460,14 @@
                 <rect x="34" y="88" width="70" height="6" rx="3" fill="#d5e7c3" opacity=".7"/>
                 <text x="24" y="134" font-family="Kumbh Sans, Arial" font-size="10" fill="#6b6e71">Financing approved</text>
                 <text x="24" y="156" font-family="Kumbh Sans, Arial" font-weight="700" font-size="20" fill="#000">RM 25,000</text>
-                <text x="24" y="176" font-family="Nunito, Arial" font-size="9" fill="#6b6e71">Tawarruq · 36 months</text>
+                <text x="24" y="176" font-family="Nunito, Arial" font-size="9" fill="#6b6e71">Personal financing · 36 months</text>
                 <rect x="24" y="188" width="122" height="6" rx="3" fill="#e4e8e1"/>
                 <rect x="24" y="188" width="96" height="6" rx="3" fill="#6f9364"/>
-                <text x="24" y="212" font-family="Nunito, Arial" font-size="8.5" fill="#6b6e71">Credit score</text>
-                <text x="146" y="212" text-anchor="end" font-family="Kumbh Sans, Arial" font-weight="700" font-size="9" fill="#175b3b">A · Low risk</text>
+                <text x="24" y="212" font-family="Nunito, Arial" font-size="8.5" fill="#6b6e71">Status</text>
+                <text x="146" y="212" text-anchor="end" font-family="Kumbh Sans, Arial" font-weight="700" font-size="9" fill="#175b3b">Approved</text>
                 <g font-family="Nunito, Arial" font-size="8.5" fill="#6b6e71">
                   <text x="24" y="232">Monthly instalment</text><text x="146" y="232" text-anchor="end" fill="#000">RM 812</text>
-                  <text x="24" y="250">Profit rate</text><text x="146" y="250" text-anchor="end" fill="#000">4.9% p.a.</text>
+                  <text x="24" y="250">Rate</text><text x="146" y="250" text-anchor="end" fill="#000">4.9% p.a.</text>
                 </g>
                 <rect x="24" y="270" width="122" height="22" rx="3" fill="#175b3b"/>
                 <text x="85" y="285" text-anchor="middle" font-family="Kumbh Sans, Arial" font-weight="700" font-size="9" fill="#fff" letter-spacing="1">ACCEPT OFFER</text>
@@ -492,7 +488,7 @@
           </div>
           <div class="float-card c3" data-depth="-14">
             <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>
-            <span>Credit risk: Low<small>Behavioural score 0.03</small></span>
+            <span>Repayment received<small>Auto-debit · on schedule</small></span>
           </div>
           <div class="float-card c2" data-depth="10">
             <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M10 6.5h4v7.5"/></svg></span>
@@ -526,7 +522,7 @@
         <div class="band-stats reveal up" style="--d:.15s">
           <div class="stat"><strong data-count="99.95" data-decimals="2" data-suffix="%">99.95%</strong><span>Target uptime</span></div>
           <div class="stat"><strong data-count="5" data-prefix="&lt; " data-suffix=" min">&lt; 5 min</strong><span>Financing decision</span></div>
-          <div class="stat"><strong>Shariah</strong><span>Compliant by design</span></div>
+          <div class="stat"><strong>End-to-end</strong><span>Digital journey</span></div>
         </div>
       </div>
     </div>
@@ -565,27 +561,19 @@
           <span class="eyebrow reveal up">Who we are</span>
           <h2 class="reveal up" style="--d:.08s">Our story</h2>
           <p class="reveal up" style="--d:.16s">Yayasan Pemangkin's journey began in 2004, responding to the Aceh tsunami and going on to support thousands of students, families and volunteers across Malaysia. YP Tech is the foundation's dedicated fintech subsidiary, created to bring that impact to the financing industry.</p>
-          <p class="reveal up" style="--d:.24s">We turn a twenty-year heritage of trust and accountability into enterprise-grade financial technology. Our platforms digitise financing from application to repayment, assess applicants fairly, including those with thin credit files, and prove where every ringgit goes, for Pemangkin's own programmes and for partner financiers.</p>
+          <p class="reveal up" style="--d:.24s">We turn a twenty-year heritage of trust and accountability into enterprise-grade financial technology. Our platforms digitise financing from application to repayment, speed up approvals and prove where every ringgit goes, for Pemangkin's own programmes and for partner financiers.</p>
 
           <div class="lineage reveal up" style="--d:.32s">
             <div class="lineage-node"><h3>Yayasan Pemangkin</h3><p>Parent foundation. Sets governance, ethics and the social-impact mandate.</p></div>
             <div class="lineage-arrow" aria-hidden="true"><svg viewBox="0 0 40 16"><path d="M0 8h34M28 2l7 6-7 6"/></svg></div>
             <div class="lineage-node"><h3>YP Tech</h3><p>Fintech subsidiary. Builds and operates digital financing infrastructure.</p></div>
-            <div class="lineage-node partner-node"><span class="tag-sm">Technology enabler</span><h3>Global Psytech Sdn Bhd</h3><p>Behavioural and data analytics partner powering YP Tech's credit-scoring and AI capabilities.</p></div>
+            <div class="lineage-node partner-node"><span class="tag-sm">Technology enabler</span><h3>Global Psytech Sdn Bhd</h3><p>Behavioural and data analytics partner powering YP Tech's data and AI capabilities.</p></div>
           </div>
           <a href="#services" class="btn reveal up" style="--d:.4s">What We Do <span class="arrow">→</span></a>
         </div>
       </div>
     </div>
 
-    <div class="stats-band">
-      <div class="container stats-grid">
-        <div class="stat reveal up"><svg viewBox="0 0 54 54" aria-hidden="true"><rect x="8" y="14" width="38" height="26" rx="3"/><path d="M8 22h38M14 33h10"/></svg><strong data-count="6" data-suffix="+">6+</strong><span>Financing solution modules</span></div>
-        <div class="stat reveal up" style="--d:.1s"><svg viewBox="0 0 54 54" aria-hidden="true"><path d="M27 6l17 8v12c0 11-7.5 18-17 22-9.5-4-17-11-17-22V14l17-8z"/><path d="M19 27l6 6 11-12"/></svg><strong data-count="24" data-suffix="/7">24/7</strong><span>AI risk monitoring</span></div>
-        <div class="stat reveal up" style="--d:.2s"><svg viewBox="0 0 54 54" aria-hidden="true"><rect x="6" y="6" width="16" height="16"/><rect x="32" y="6" width="16" height="16"/><rect x="19" y="32" width="16" height="16"/><path d="M22 14h10M14 22v10h5M40 22v10h-5"/></svg><strong data-count="100" data-suffix="%">100%</strong><span>Traceable disbursements</span></div>
-        <div class="stat reveal up" style="--d:.3s"><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="18" r="8"/><path d="M11 46c0-9 7-15 16-15s16 6 16 15"/></svg><strong data-count="20" data-suffix="+">20+</strong><span>Years of community trust</span></div>
-      </div>
-    </div>
   </section>
 
   <!-- ===================== 3. SERVICES ===================== -->
@@ -598,118 +586,73 @@
       </div>
 
       <div class="services-grid">
-        <article class="service reveal up">
+        <article class="service reveal up" style="--d:0.0s">
           <div class="icon"><svg viewBox="0 0 64 64"><rect x="10" y="6" width="34" height="46" rx="3"/><path d="M18 18h18M18 26h18M18 34h10"/><circle cx="46" cy="46" r="12"/><path d="M41 46l4 4 7-8"/></svg></div>
           <h3>Digital Financing &amp; Loan Origination</h3>
           <p>An end-to-end digital financing journey, from online application to automated underwriting, e-agreement and same-day disbursement.</p>
           <ul><li>Web &amp; mobile financing applications</li><li>Automated underwriting &amp; decisioning</li><li>e-Agreement, e-stamping &amp; instant disbursement</li></ul>
         </article>
 
-        <article class="service reveal up" style="--d:.1s">
-          <div class="icon"><svg viewBox="0 0 64 64"><circle cx="24" cy="22" r="12"/><path d="M18 22c2-4 10-4 12 0M24 10v4"/><path d="M8 56c1-10 7-16 16-16 4 0 7 1 10 3"/><path d="M38 56V44M46 56V36M54 56V28"/></svg></div>
-          <h3>AI &amp; Behavioural Credit Scoring</h3>
-          <p>Credit assessment that looks beyond bureau data, combining behavioural, psychometric and alternative data in models powered by Global Psytech.</p>
-          <ul><li>Psychometric &amp; behavioural scoring</li><li>Alternative-data risk models for thin-file applicants</li><li>Explainable, auditable credit decisions</li></ul>
-        </article>
-
-        <article class="service reveal up" style="--d:.2s">
+        <article class="service reveal up" style="--d:0.1s">
           <div class="icon"><svg viewBox="0 0 64 64"><path d="M14 30c0-8 8-14 18-14s18 6 18 14"/><path d="M32 6v10M10 30h44v6H10zM14 36v20M50 36v20M24 36v20M40 36v20M8 56h48"/></svg></div>
-          <h3>Islamic &amp; Cooperative Financing</h3>
-          <p>A Shariah-compliant product engine for financiers and cooperatives, with configurable contracts, profit calculation and Shariah audit trails.</p>
-          <ul><li>Murabahah, tawarruq, ijarah &amp; qard hasan</li><li>Cooperative member-financing modules</li><li>Microfinancing for asnaf &amp; micro-entrepreneurs</li></ul>
+          <h3>Cooperative &amp; SME Financing</h3>
+          <p>A configurable financing product engine for cooperatives, SMEs and community lenders, with flexible terms, rate calculation and full audit trails.</p>
+          <ul><li>Personal, SME &amp; asset financing products</li><li>Cooperative member-financing modules</li><li>Microfinancing for micro-entrepreneurs</li></ul>
         </article>
 
-        <article class="service reveal up">
+        <article class="service reveal up" style="--d:0.2s">
           <div class="icon"><svg viewBox="0 0 64 64"><rect x="6" y="12" width="52" height="40" rx="3"/><path d="M6 22h52M14 34h12M14 42h20"/><circle cx="46" cy="38" r="7"/><path d="M46 34v4l3 2"/></svg></div>
           <h3>Financing Management &amp; Collections</h3>
           <p>Servicing for the full financing lifecycle, with automated repayments, early-warning alerts and digital collections workflows.</p>
           <ul><li>Auto-debit, DuitNow &amp; FPX repayments</li><li>Early-warning delinquency prediction</li><li>Restructuring &amp; collections case management</li></ul>
         </article>
 
-        <article class="service reveal up" style="--d:.1s">
+        <article class="service reveal up" style="--d:0.3s">
           <div class="icon"><svg viewBox="0 0 64 64"><rect x="6" y="6" width="18" height="18" rx="2"/><rect x="40" y="6" width="18" height="18" rx="2"/><rect x="23" y="40" width="18" height="18" rx="2"/><path d="M24 15h16M15 24v12h8M49 24v12h-8"/></svg></div>
           <h3>Blockchain Financing Infrastructure</h3>
           <p>Permissioned ledgers that keep an immutable record of every financing agreement, disbursement and repayment for financiers, auditors and regulators.</p>
-          <ul><li>Tamper-proof financing records</li><li>Smart-contract disbursement rules</li><li>Tokenised sukuk &amp; asset-backed financing</li></ul>
+          <ul><li>Tamper-proof financing records</li><li>Smart-contract disbursement rules</li><li>Tokenised &amp; asset-backed financing</li></ul>
         </article>
 
-        <article class="service reveal up" style="--d:.2s">
-          <div class="icon"><svg viewBox="0 0 64 64"><path d="M32 6l20 9v14c0 13-8.5 22-20 27-11.5-5-20-14-20-27V15l20-9z"/><circle cx="32" cy="30" r="7"/><path d="M32 23v-5M32 42v-5M25 30h-5M44 30h-5"/></svg></div>
-          <h3>Fraud Prevention &amp; e-KYC</h3>
-          <p>Fast, compliant onboarding and real-time protection against application fraud, identity theft and money laundering.</p>
-          <ul><li>MyKad e-KYC, liveness &amp; face matching</li><li>AI application-fraud detection</li><li>AML/CFT screening &amp; monitoring</li></ul>
-        </article>
       </div>
     </div>
   </section>
 
-  <!-- ===================== 4. TECHNOLOGY ===================== -->
-  <section id="technology" class="section tech" data-section="4" data-title="Technology Stack">
-    <div class="container tech-grid">
-      <div class="tech-photo reveal left">
-        <div class="photo">
-          <svg viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect width="500" height="620" fill="#2e2e2e"/>
-            <g fill="#3d3d3d">
-              <rect x="40" y="60" width="120" height="500" rx="4"/><rect x="190" y="60" width="120" height="500" rx="4"/><rect x="340" y="60" width="120" height="500" rx="4"/>
-            </g>
-            <g fill="#555">
-              <rect x="56" y="90" width="88" height="14" rx="2"/><rect x="56" y="120" width="88" height="14" rx="2"/><rect x="56" y="150" width="88" height="14" rx="2"/><rect x="56" y="180" width="88" height="14" rx="2"/><rect x="56" y="210" width="88" height="14" rx="2"/>
-              <rect x="206" y="90" width="88" height="14" rx="2"/><rect x="206" y="120" width="88" height="14" rx="2"/><rect x="206" y="150" width="88" height="14" rx="2"/><rect x="206" y="180" width="88" height="14" rx="2"/>
-              <rect x="356" y="90" width="88" height="14" rx="2"/><rect x="356" y="120" width="88" height="14" rx="2"/><rect x="356" y="150" width="88" height="14" rx="2"/><rect x="356" y="180" width="88" height="14" rx="2"/><rect x="356" y="210" width="88" height="14" rx="2"/>
-              <rect x="56" y="260" width="88" height="14" rx="2"/><rect x="206" y="260" width="88" height="14" rx="2"/><rect x="356" y="260" width="88" height="14" rx="2"/>
-              <rect x="56" y="290" width="88" height="14" rx="2"/><rect x="206" y="290" width="88" height="14" rx="2"/><rect x="356" y="290" width="88" height="14" rx="2"/>
-            </g>
-            <g class="leds">
-              <circle cx="136" cy="97" r="3" fill="#d5e7c3"/><circle cx="286" cy="127" r="3" fill="#d5e7c3"/><circle cx="436" cy="157" r="3" fill="#d5e7c3"/>
-              <circle cx="136" cy="187" r="3" fill="#6f9364"/><circle cx="286" cy="267" r="3" fill="#d5e7c3"/><circle cx="436" cy="297" r="3" fill="#6f9364"/>
-            </g>
-            <rect y="420" width="500" height="200" fill="url(#techfade)"/>
-            <defs><linearGradient id="techfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e2e2e" stop-opacity="0"/><stop offset="1" stop-color="#1a1a1a"/></linearGradient></defs>
-          </svg>
-          <img src="images/tech.jpg" alt="" onerror="this.remove()">
-        </div>
-        <div class="tag"><b>6 layers</b>Enabled by Global Psytech</div>
-      </div>
-
-      <div>
-        <span class="eyebrow reveal up">Under the hood</span>
-        <h2 class="reveal up" style="--d:.08s">Technology stack</h2>
-        <p class="reveal up" style="--d:.16s">Every layer is engineered for resilience, horizontal scale and regulatory-grade observability, from the customer interface down to the ledger.</p>
-        <div class="stack">
-          <div class="layer reveal right"><h3><small>LAYER 01</small>Experience</h3><div class="chips"><span class="chip">React / Next.js</span><span class="chip">Flutter</span><span class="chip">TypeScript</span><span class="chip">Design System</span></div></div>
-          <div class="layer reveal right" style="--d:.06s"><h3><small>LAYER 02</small>API &amp; Integration</h3><div class="chips"><span class="chip">REST / GraphQL</span><span class="chip">OAuth 2.0 / OIDC</span><span class="chip">API Gateway</span><span class="chip">ISO 20022</span></div></div>
-          <div class="layer reveal right" style="--d:.12s"><h3><small>LAYER 03</small>Core Services</h3><div class="chips"><span class="chip">Loan Origination Engine</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Node.js</span><span class="chip">Apache Kafka</span><span class="chip">Event Sourcing</span></div></div>
-          <div class="layer reveal right" style="--d:.18s"><h3><small>LAYER 04</small>AI &amp; Risk Intelligence</h3><div class="chips"><span class="chip">Behavioural Scoring (Global Psytech)</span><span class="chip">PyTorch</span><span class="chip">XGBoost</span><span class="chip">Graph Analytics</span><span class="chip">Explainable AI</span></div></div>
-          <div class="layer reveal right" style="--d:.24s"><h3><small>LAYER 05</small>Ledger &amp; Blockchain</h3><div class="chips"><span class="chip">Hyperledger Fabric</span><span class="chip">EVM Smart Contracts</span><span class="chip">PostgreSQL</span><span class="chip">Hash Anchoring</span></div></div>
-          <div class="layer reveal right" style="--d:.3s"><h3><small>LAYER 06</small>Cloud &amp; Security</h3><div class="chips"><span class="chip">Kubernetes</span><span class="chip">Terraform</span><span class="chip">HSM / KMS</span><span class="chip">Zero-Trust</span><span class="chip">SIEM</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Digital Financing</span><span>Islamic Financing</span><span>Behavioural Credit Scoring</span><span>Loan Origination</span><span>Blockchain Ledger</span><span>Fraud Prevention</span><span>e-KYC</span>
-        <span>Digital Financing</span><span>Islamic Financing</span><span>Behavioural Credit Scoring</span><span>Loan Origination</span><span>Blockchain Ledger</span><span>Fraud Prevention</span><span>e-KYC</span>
-      </div>
-    </div>
-
+  <!-- ===================== 4. IMPACT ===================== -->
+  <section id="impact" class="impact" data-section="4" data-title="Group Impact">
     <div class="container">
-      <div class="compliance reveal up">
-        <span class="badge">PCI DSS-aligned</span><span class="badge">ISO/IEC 27001 framework</span><span class="badge">BNM RMiT-ready</span><span class="badge">PDPA 2010 compliant</span><span class="badge">Shariah governance</span>
+      <div class="impact-head reveal up">
+        <span class="eyebrow">Our group's impact</span>
+        <p>Yayasan Pemangkin's reach across Malaysia since 2004, the community YP Tech is built to serve.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat reveal up"><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="20" r="11"/><path d="M16 20h22M27 9c4 4 4 18 0 22M27 9c-4 4-4 18 0 22"/><path d="M6 34c5 0 9 3 12 7h14c2 0 2-3 0-3h-7M48 34c-5 0-9 3-12 7"/></svg><strong data-count="5000" data-suffix="+">5,000+</strong><span>Members Nationwide</span></div>
+        <div class="stat reveal up" style="--d:.1s"><svg viewBox="0 0 54 54" aria-hidden="true"><path d="M30 6c4 5 7 9 7 13a7 7 0 01-14 0c0-4 3-8 7-13z"/><path d="M6 36h8l8 4h9c2 0 2 4 0 4H21M14 46l6 3h14l14-9c2-1 0-4-2-3l-9 5"/></svg><strong data-count="100000" data-suffix="+">100,000+</strong><span>Aid Receivers</span></div>
+        <div class="stat reveal up" style="--d:.2s"><svg viewBox="0 0 54 54" aria-hidden="true"><rect x="8" y="22" width="16" height="24" rx="2"/><rect x="30" y="22" width="16" height="24" rx="2"/><path d="M16 22v-8M38 22v-8M12 14c2-4 6-4 8 0M34 14c2-4 6-4 8 0M13 34h6M16 31v6M35 34h6M38 31v6"/></svg><strong data-count="1000" data-suffix="+">1,000+</strong><span>Meal Aids Provided</span></div>
+        <div class="stat reveal up" style="--d:.3s"><svg viewBox="0 0 54 54" aria-hidden="true"><rect x="8" y="26" width="38" height="20" rx="2"/><path d="M8 32h38M20 26V16h14v10M24 16v-6h6v6"/><circle cx="27" cy="39" r="3"/></svg><strong data-count="50" data-prefix="RM " data-suffix="M">RM 50M</strong><span>Financial Assistance Provided</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== 5. TECHNOLOGY PARTNER ===================== -->
-  <section id="partner" class="section partner" data-section="5" data-title="Technology Partner">
+  <!-- ===================== 5. CALL TO ACTION ===================== -->
+  <section id="cta" class="section cta" data-section="5" data-title="Call to Action">
+    <div class="cta-shapes" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="container center cta-inner">
+      <h2 class="reveal up">Every ringgit counts: financing that lifts communities</h2>
+      <p class="reveal up" style="--d:.1s">Partner with YP Tech to bring fair, transparent and fully digital financing to the people your institution serves.</p>
+      <div class="reveal up" style="--d:.2s"><a href="#contact" class="btn">Partner With Us <span class="arrow">→</span></a></div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. TECHNOLOGY PARTNER ===================== -->
+  <section id="partner" class="section partner" data-section="6" data-title="Technology Partner">
     <div class="partner-bg" aria-hidden="true"></div>
     <div class="container partner-grid">
       <div>
         <span class="eyebrow reveal up">Technology enabler</span>
         <h2 class="reveal up" style="--d:.08s">In partnership with Global Psytech Sdn Bhd</h2>
-        <p class="reveal up" style="--d:.16s">Global Psytech Sdn Bhd is a Cyberjaya-based data technology company that specialises in behavioural and data analytics, including behavioural credit scoring and intelligent assessment. As YP Tech's technology enabler, it supplies the analytics engine and engineering expertise behind our credit decisioning and AI risk capabilities.</p>
-        <p class="reveal up" style="--d:.22s">Together we bring inclusive, data-driven financing to applicants that traditional credit models often overlook.</p>
+        <p class="reveal up" style="--d:.16s">Global Psytech Sdn Bhd is a Cyberjaya-based data technology company that specialises in behavioural and data analytics, including behavioural credit scoring and intelligent assessment. As YP Tech's technology enabler, it supplies the analytics engine and engineering expertise behind our financing platforms.</p>
+        <p class="reveal up" style="--d:.22s">Together we bring inclusive, data-driven financing to the communities we serve.</p>
         <a href="https://www.globalpsytech.com/" target="_blank" rel="noopener" class="btn btn-mint reveal up" style="--d:.3s">Visit Global Psytech <span class="arrow">→</span></a>
       </div>
 
@@ -726,8 +669,8 @@
           </div>
         </div>
         <div class="roles">
-          <div class="role"><h3>Behavioural credit scoring</h3><p>Psychometric and behavioural models for fair, inclusive credit assessment.</p></div>
-          <div class="role"><h3>AI &amp; data analytics</h3><p>Risk analytics, model governance and explainable AI.</p></div>
+          <div class="role"><h3>Behavioural &amp; data analytics</h3><p>Customer insight that supports better, fairer financing decisions.</p></div>
+          <div class="role"><h3>AI decision support</h3><p>Model governance and explainable AI for financing workflows.</p></div>
           <div class="role"><h3>Platform engineering</h3><p>Joint product development, integration and support.</p></div>
           <div class="role"><h3>Research &amp; innovation</h3><p>Ongoing R&amp;D on alternative data for financial inclusion.</p></div>
         </div>
@@ -735,8 +678,47 @@
     </div>
   </section>
 
-  <!-- ===================== 6. CONTACT ===================== -->
-  <section id="contact" class="section contact" data-section="6" data-title="Contact">
+  <!-- ===================== 7. NEWS ===================== -->
+  <section id="news" class="section news" data-section="7" data-title="News">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow reveal up">Newsroom</span>
+        <h2 class="reveal up" style="--d:.08s">Read our latest news &amp; featured stories</h2>
+      </div>
+      <div class="news-grid">
+        <article class="news-card reveal up">
+          <div class="news-img">
+            <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="260" fill="#3a3a3a"/><rect x="40" y="170" width="320" height="16" fill="#555"/><circle cx="150" cy="110" r="22" fill="#6a6a6a"/><rect x="128" y="132" width="44" height="50" rx="8" fill="#6a6a6a"/><circle cx="250" cy="110" r="22" fill="#777"/><rect x="228" y="132" width="44" height="50" rx="8" fill="#777"/><path d="M172 150h56" stroke="#d5e7c3" stroke-width="6" stroke-linecap="round"/></svg>
+            <img src="images/news-1.jpg" alt="" onerror="this.remove()">
+          </div>
+          <p class="news-meta">Announcement · 2026</p>
+          <h3>YP Tech appoints Global Psytech Sdn Bhd as technology enabler</h3>
+          <a href="#partner" class="read-more">Read more <span class="arrow">→</span></a>
+        </article>
+        <article class="news-card reveal up" style="--d:.1s">
+          <div class="news-img">
+            <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="260" fill="#4a4a4a"/><rect x="70" y="60" width="260" height="140" rx="6" fill="#2f2f2f"/><path d="M70 90h260" stroke="#555" stroke-width="2"/><rect x="100" y="120" width="80" height="12" rx="3" fill="#666"/><rect x="100" y="146" width="140" height="10" rx="3" fill="#5a5a5a"/><circle cx="290" cy="150" r="22" fill="#175b3b"/><path d="M280 150l7 7 13-14" stroke="#d5e7c3" stroke-width="4" fill="none"/></svg>
+            <img src="images/news-2.jpg" alt="" onerror="this.remove()">
+          </div>
+          <p class="news-meta">Group news · July 27, 2024</p>
+          <h3>MCCF dan PEMANGKIN tandatangan MoU</h3>
+          <a href="https://pemangkin.my/" target="_blank" rel="noopener" class="read-more">Read more <span class="arrow">→</span></a>
+        </article>
+        <article class="news-card reveal up" style="--d:.2s">
+          <div class="news-img">
+            <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="260" fill="#333"/><path d="M0 260V170l60-40 50 30 70-60 60 50 50-30 110 70v70z" fill="#444"/><rect x="170" y="110" width="60" height="70" fill="#5d5d5d"/><path d="M160 112l40-30 40 30" fill="#6a6a6a"/><rect x="192" y="146" width="16" height="34" fill="#2b2b2b"/></svg>
+            <img src="images/news-3.jpg" alt="" onerror="this.remove()">
+          </div>
+          <p class="news-meta">Group news · February 26, 2020</p>
+          <h3>Providing shelter for orphaned or homeless children</h3>
+          <a href="https://pemangkin.my/" target="_blank" rel="noopener" class="read-more">Read more <span class="arrow">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. CONTACT ===================== -->
+  <section id="contact" class="section contact" data-section="8" data-title="Contact">
     <div class="container contact-grid">
       <div class="contact-info">
         <span class="eyebrow reveal up">Get in touch</span>
@@ -758,8 +740,8 @@
           <div><label for="email">Work Email</label><input id="email" name="email" type="email" placeholder="you@company.com" required></div>
           <div><label for="interest">Area of Interest</label>
             <select id="interest" name="interest">
-              <option>Digital Financing Platform</option><option>AI &amp; Behavioural Credit Scoring</option><option>Islamic &amp; Cooperative Financing</option>
-              <option>Financing Management &amp; Collections</option><option>Blockchain Financing</option><option>Fraud Prevention &amp; e-KYC</option><option>Partnership / Other</option>
+              <option>Digital Financing Platform</option><option>Cooperative &amp; SME Financing</option>
+              <option>Financing Management &amp; Collections</option><option>Blockchain Financing</option><option>Partnership / Other</option>
             </select>
           </div>
         </div>
@@ -779,7 +761,7 @@
     <div class="footer-grid">
       <div><h4>Address</h4><p>Wisma Koperasi Iman,<br>No. 17 Jalan SG 3/4,<br>Batu Caves 68100,<br>Selangor Darul Ehsan</p></div>
       <div><h4>Say Hello</h4><p><a href="mailto:hello@yptech.my">hello@yptech.my</a></p></div>
-      <div><h4>Explore</h4><p><a href="#about">About</a><br><a href="#services">Services</a><br><a href="#technology">Technology</a><br><a href="#contact">Contact</a></p></div>
+      <div><h4>Explore</h4><p><a href="#about">About</a><br><a href="#services">Services</a><br><a href="#partner">Partner</a><br><a href="#news">News</a><br><a href="#contact">Contact</a></p></div>
       <div><h4>Group &amp; Partners</h4><p><a href="https://pemangkin.my/" target="_blank" rel="noopener">Yayasan Pemangkin</a><br>Technology enabler: <a href="https://www.globalpsytech.com/" target="_blank" rel="noopener">Global Psytech Sdn Bhd</a></p></div>
     </div>
     <div class="copy"><span>YP Tech © 2026. A subsidiary of Yayasan Pemangkin · Technology enabler: Global Psytech Sdn Bhd. All Rights Reserved.</span><span>Privacy · Terms · Security Disclosure</span></div>
@@ -837,7 +819,7 @@
     (function tick(t) {
       const p = Math.min((t - t0) / dur, 1);
       const v = end * (1 - Math.pow(1 - p, 3));
-      el.textContent = pre + v.toFixed(dec) + suf;
+      el.textContent = pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US')) + suf;
       if (p < 1) requestAnimationFrame(tick);
     })(t0);
   }
