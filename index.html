@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YP Tech | Financing Technology by Yayasan Pemangkin</title>
 <meta name="description" content="YP Tech is the fintech subsidiary of Yayasan Pemangkin, building digital financing, data analytics and blockchain infrastructure for the financing industry, with technology partner GFI Fintech Group of Companies.">
+<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0907/7719/0713/files/Gemini_Generated_Image_82reli82reli82re-removebg-preview.png?v=1794910583">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -93,6 +94,8 @@
   .nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   .logo { display: flex; align-items: center; gap: .75rem; }
   .logo-mark { width: 46px; height: 46px; flex: none; }
+  .logo-img { height: 48px; width: auto; flex: none; transition: transform .4s var(--ease); }
+  .logo:hover .logo-img { transform: rotate(-6deg) scale(1.05); }
   .logo-text { font-family: var(--head-font); font-weight: 800; font-size: 1.35rem; color: var(--head); line-height: 1; }
   .logo-text small { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .16em; color: var(--green); margin-top: 5px; }
   .nav-links { display: flex; gap: 2.2rem; list-style: none; margin: 0; padding: 0; }
@@ -235,7 +238,7 @@
   .tag-sm { display: block; font-family: var(--head-font); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin-bottom: 2px; }
 
   /* =========================================================
-     6. Technology partner (GFI Fintech) + partnership visit
+     6. Technology partner (Global Psytech, GFI Fintech subsidiary) + partnership visit
      ========================================================= */
   .partner { background: var(--green-dark); color: var(--white); overflow: hidden; }
   .partner-bg { position: absolute; inset: 0; opacity: .35; pointer-events: none;
@@ -252,11 +255,16 @@
   .party h3 { color: var(--white); font-size: 1rem; margin: 12px 0 2px; }
   .party p { font-size: .82rem; margin: 0; color: var(--mint); }
   .party-mark { width: 64px; height: 64px; margin: 0 auto; }
+  .party-logo { height: 66px; width: auto; margin: 0 auto; display: block; }
   .party-word { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto; border-radius: 4px; background: var(--white); color: var(--green-dark); font-family: var(--head-font); font-weight: 800; font-size: .7rem; line-height: 1.1; letter-spacing: .02em; }
   .link-line svg { width: 100%; height: 40px; overflow: visible; }
   .link-line path { stroke: var(--sage); stroke-width: 2; stroke-dasharray: 5 6; animation: flow 2s linear infinite; }
   .dot-run { fill: var(--mint); animation: run 2.4s var(--ease) infinite; }
   @keyframes run { 0% { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(160px); opacity: 0; } }
+  .subsidiary { margin: 4px 0 26px; padding: 16px 18px; border-left: 3px solid var(--mint); background: rgba(255,255,255,.06); border-radius: 2px; }
+  .subsidiary .tag-sm { color: var(--mint); }
+  .subsidiary h3 { color: var(--white); font-size: 1.05rem; margin-bottom: .25rem; }
+  .subsidiary p { font-size: .9rem; margin: 0; }
   .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; }
   .role { background: rgba(255,255,255,.06); border-radius: 3px; padding: 16px 18px; border-top: 2px solid var(--sage); transition: background .35s, transform .35s var(--ease), border-color .35s; }
   .role:hover { background: rgba(255,255,255,.1); transform: translateY(-4px); border-top-color: var(--mint); }
@@ -416,7 +424,8 @@
 <header class="site-header" id="header">
   <div class="container nav">
     <a href="#hero" class="logo" aria-label="YP Tech home">
-      <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
+      <img class="logo-img" src="https://cdn.shopify.com/s/files/1/0907/7719/0713/files/Gemini_Generated_Image_82reli82reli82re-removebg-preview.png?v=1794910583" alt="YP Tech logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true" style="display:none">
         <rect width="48" height="48" rx="4" fill="#175b3b"/>
         <path d="M24 9c6 5 9 10 9 15s-4 9-9 9-9-4-9-9 3-10 9-15z" fill="#d5e7c3"/>
         <path d="M24 17v16M19 24h10" stroke="#175b3b" stroke-width="2.4" stroke-linecap="round"/>
@@ -463,7 +472,7 @@
           </a>
           <a href="#partner" class="enabler">
             <span class="enabler-label">Technology partner</span>
-            <span class="enabler-name">GFI Fintech</span>
+            <span class="enabler-name">Global Psytech Group of Companies</span>
             <span class="arrow">→</span>
           </a>
           </div>
@@ -606,7 +615,7 @@
             <div class="lineage-node"><h3>Yayasan Pemangkin</h3><p>Parent foundation. The welfare legacy and social-impact mandate since 2004.</p></div>
             <div class="lineage-arrow" aria-hidden="true"><svg viewBox="0 0 40 16"><path d="M0 8h34M28 2l7 6-7 6"/></svg></div>
             <div class="lineage-node"><h3>YP Tech</h3><p>Technology subsidiary. Making welfare and financing more systematic through technology.</p></div>
-            <div class="lineage-node partner-node"><span class="tag-sm">Technology partner</span><h3>GFI Fintech</h3><p>Data analytics and profiling technology partner powering YP Tech's financing platforms.</p></div>
+            <div class="lineage-node partner-node"><span class="tag-sm">Technology partner</span><h3>Global Psytech Group of Companies</h3><p>Behavioural and data analytics group powering YP Tech's financing platforms, with GFI Fintech as its Islamic financial technology subsidiary.</p></div>
           </div>
           <a href="#services" class="btn reveal up" style="--d:.4s">What We Do <span class="arrow">→</span></a>
         </div>
@@ -724,22 +733,28 @@
     <div class="container partner-grid">
       <div>
         <span class="eyebrow reveal up">Technology partner</span>
-        <h2 class="reveal up" style="--d:.08s">In partnership with GFI Fintech</h2>
-        <p class="reveal up" style="--d:.16s">GFI Fintech is a Kuala Lumpur-based data analytics technology company that specialises in profiling technology for the financial industry. Its flagship product, GFI, is a psychometric credit risk assessment system that helps financiers lend more inclusively. As YP Tech's technology partner, GFI Fintech supplies the analytics engine and engineering expertise behind our financing platforms.</p>
+        <h2 class="reveal up" style="--d:.08s">In partnership with Global Psytech Group of Companies</h2>
+        <p class="reveal up" style="--d:.16s">Global Psytech Group of Companies is a Malaysian data technology group that specialises in behavioural and data analytics. As YP Tech's technology partner, the group supplies the analytics engine and engineering expertise behind our financing platforms.</p>
+        <div class="subsidiary reveal up" style="--d:.2s">
+          <span class="tag-sm">Subsidiary · Islamic financial technology</span>
+          <h3>GFI Fintech</h3>
+          <p>GFI Fintech is the group's subsidiary for Islamic financial technology. Its flagship product, GFI, is a psychometric credit risk assessment system that helps financiers lend more inclusively.</p>
+        </div>
         <p class="reveal up" style="--d:.22s">Together we bring inclusive, data-driven financing to the communities we serve.</p>
-        <a href="https://www.gfi-fintech.com/" target="_blank" rel="noopener" class="btn btn-mint reveal up" style="--d:.3s">Visit GFI Fintech <span class="arrow">→</span></a>
+        <a href="https://www.globalpsytech.com/" target="_blank" rel="noopener" class="btn btn-mint reveal up" style="--d:.3s">Visit Global Psytech <span class="arrow">→</span></a>
       </div>
 
       <div class="partner-visual reveal zoom" style="--d:.15s">
         <div class="handshake">
           <div class="party">
-            <svg class="party-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="4" fill="#d5e7c3"/><path d="M24 9c6 5 9 10 9 15s-4 9-9 9-9-4-9-9 3-10 9-15z" fill="#175b3b"/><path d="M24 17v16M19 24h10" stroke="#d5e7c3" stroke-width="2.4" stroke-linecap="round"/></svg>
+            <img class="party-logo" src="https://cdn.shopify.com/s/files/1/0907/7719/0713/files/Gemini_Generated_Image_82reli82reli82re-removebg-preview.png?v=1794910583" alt="YP Tech logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <svg class="party-mark" viewBox="0 0 48 48" aria-hidden="true" style="display:none"><rect width="48" height="48" rx="4" fill="#d5e7c3"/><path d="M24 9c6 5 9 10 9 15s-4 9-9 9-9-4-9-9 3-10 9-15z" fill="#175b3b"/><path d="M24 17v16M19 24h10" stroke="#d5e7c3" stroke-width="2.4" stroke-linecap="round"/></svg>
             <h3>YP Tech</h3><p>Technology subsidiary</p>
           </div>
           <div class="link-line" aria-hidden="true"><svg viewBox="0 0 160 40"><path d="M0 20H160"/><circle class="dot-run" cx="0" cy="20" r="5"/></svg></div>
           <div class="party">
-            <span class="party-word">GFI<br>Fintech</span>
-            <h3>GFI Fintech</h3><p>Technology partner</p>
+            <span class="party-word">Global<br>Psytech</span>
+            <h3>Global Psytech Group of Companies</h3><p>Technology partner</p>
           </div>
         </div>
         <div class="roles">
@@ -851,9 +866,9 @@
       <div><h4>Address</h4><p>Wisma Koperasi Iman,<br>No. 17 Jalan SG 3/4,<br>Batu Caves 68100,<br>Selangor Darul Ehsan</p></div>
       <div><h4>Say Hello</h4><p><a href="mailto:info@gfi-fintech.com">info@gfi-fintech.com</a></p></div>
       <div><h4>Explore</h4><p><a href="#about">About</a><br><a href="#services">Services</a><br><a href="#partner">Partner</a><br><a href="#news">News</a><br><a href="#contact">Contact</a></p></div>
-      <div><h4>Group &amp; Partners</h4><p><a href="https://pemangkin.my/" target="_blank" rel="noopener">Yayasan Pemangkin</a><br>Technology partner: <a href="https://www.gfi-fintech.com/" target="_blank" rel="noopener">GFI Fintech</a></p></div>
+      <div><h4>Group &amp; Partners</h4><p><a href="https://pemangkin.my/" target="_blank" rel="noopener">Yayasan Pemangkin</a><br>Technology partner: <a href="https://www.globalpsytech.com/" target="_blank" rel="noopener">Global Psytech Group of Companies</a></p></div>
     </div>
-    <div class="copy"><span>YP Tech © 2026. A subsidiary of Yayasan Pemangkin · Technology partner: GFI Fintech. All Rights Reserved.</span><span>Privacy · Terms · Security Disclosure</span></div>
+    <div class="copy"><span>YP Tech © 2026. A subsidiary of Yayasan Pemangkin · Technology partner: Global Psytech Group of Companies. All Rights Reserved.</span><span>Privacy · Terms · Security Disclosure</span></div>
   </div>
 </footer>
 
