@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YP Tech | Financing Technology by Yayasan Pemangkin</title>
-<meta name="description" content="YP Tech is the fintech subsidiary of Yayasan Pemangkin, building digital financing, data analytics and blockchain infrastructure for the financing industry, with technology enabler Global Psytech Group of Companies.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
   /* =========================================================
      Brand tokens - taken from pemangkin.my
@@ -235,7 +226,7 @@
   .tag-sm { display: block; font-family: var(--head-font); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); margin-bottom: 2px; }
 
   /* =========================================================
-     6. Technology partner (Global Psytech)
+     6. Technology partner (GFI Fintech) + partnership visit
      ========================================================= */
   .partner { background: var(--green-dark); color: var(--white); overflow: hidden; }
   .partner-bg { position: absolute; inset: 0; opacity: .35; pointer-events: none;
@@ -262,6 +253,37 @@
   .role:hover { background: rgba(255,255,255,.1); transform: translateY(-4px); border-top-color: var(--mint); }
   .role h3 { color: var(--white); font-size: .95rem; margin-bottom: .3rem; }
   .role p { font-size: .84rem; margin: 0; line-height: 1.55; }
+
+  /* =========================================================
+     4. Salary deduction
+     ========================================================= */
+  .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .badges .enabler { margin-top: 0; }
+  .deduction { background: var(--paper); }
+  .deduction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+  .angkasa { display: flex; gap: 18px; align-items: center; margin-top: 28px; padding: 22px 24px; background: var(--green); color: var(--white); border-radius: 4px; box-shadow: 0 18px 40px rgba(15,58,38,.2); }
+  .angkasa h3 { color: var(--white); font-size: 1.1rem; margin-bottom: .25rem; }
+  .angkasa p { color: rgba(255,255,255,.85); margin: 0; font-size: .92rem; }
+  .angkasa-seal svg { width: 62px; height: 62px; stroke: var(--mint); fill: none; stroke-width: 2.2; animation: spinSeal 14s linear infinite; }
+  .angkasa-seal svg path { stroke-width: 3.4; }
+  @keyframes spinSeal { to { transform: rotate(360deg); } }
+  .deduct-cards { display: grid; gap: 16px; }
+  .deduct-card { position: relative; background: var(--white); padding: 24px 26px 24px 86px; border-radius: 4px; border-left: 4px solid var(--sage); box-shadow: 0 10px 30px rgba(0,0,0,.05); transition: transform .4s var(--ease), border-color .4s, box-shadow .4s; }
+  .deduct-card:hover { transform: translateX(6px); border-left-color: var(--green); box-shadow: 0 18px 40px rgba(15,58,38,.1); }
+  .deduct-card .num { position: absolute; left: 24px; top: 22px; font-family: var(--head-font); font-weight: 800; font-size: 1.8rem; color: var(--mint); -webkit-text-stroke: 1px var(--green); }
+  .deduct-card h3 { font-size: 1.08rem; margin-bottom: .35rem; }
+  .deduct-card p { font-size: .93rem; margin: 0; }
+
+  /* partnership visit */
+  .visit { position: relative; margin-top: 80px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,.12); display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; align-items: center; }
+  .visit-text h3 { color: var(--white); font-size: 1.6rem; }
+  .visit-gallery { display: grid; grid-template-columns: .75fr 1fr; gap: 16px; align-items: end; }
+  .visit-photo { position: relative; margin: 0; overflow: hidden; border-radius: 4px; background: rgba(255,255,255,.06) center/48px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d5e7c3' stroke-width='1.5'%3E%3Crect x='3' y='6' width='18' height='14' rx='2'/%3E%3Ccircle cx='12' cy='13' r='4'/%3E%3Cpath d='M8 6l2-3h4l2 3'/%3E%3C/svg%3E"); box-shadow: 0 20px 44px rgba(0,0,0,.3); }
+  .visit-photo.tall { aspect-ratio: 3 / 4; }
+  .visit-photo.wide { aspect-ratio: 4 / 3; }
+  .visit-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+  .visit-photo:hover img { transform: scale(1.05); }
+  .visit-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px; font-size: .8rem; line-height: 1.4; color: var(--white); background: linear-gradient(transparent, rgba(0,0,0,.75)); }
 
   /* =========================================================
      CTA band ("Every dollar counts" style) and News
@@ -353,7 +375,7 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 1024px) {
-    .hero-grid, .about-grid, .contact-grid, .band-inner, .partner-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero-grid, .about-grid, .contact-grid, .band-inner, .partner-grid, .deduction-grid, .visit { grid-template-columns: 1fr; gap: 50px; }
     .band-stats { justify-content: flex-start; }
     .band-stats .stat:first-child { padding-left: 0; }
     .services-grid, .news-grid { grid-template-columns: 1fr 1fr; }
@@ -366,7 +388,7 @@
     .menu-toggle { display: block; }
   }
   @media (max-width: 640px) {
-    .services-grid, .news-grid, .form-row, .footer-grid, .lineage, .roles { grid-template-columns: 1fr; }
+    .services-grid, .news-grid, .form-row, .footer-grid, .lineage, .roles, .visit-gallery { grid-template-columns: 1fr; }
     .lineage-arrow { transform: rotate(90deg); justify-self: center; }
     .handshake { grid-template-columns: 1fr; gap: 10px; }
     .link-line { transform: rotate(90deg); width: 80px; margin: 10px auto; }
@@ -396,6 +418,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#deduction">Salary Deduction</a></li>
       <li><a href="#partner">Partner</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -423,11 +446,18 @@
             <a href="#services" class="btn">Our Solutions <span class="arrow">→</span></a>
             <a href="#contact" class="btn btn-sage">Contacts</a>
           </div>
-          <a href="#partner" class="enabler load" style="--d:.75s">
-            <span class="enabler-label">Technology enabler</span>
-            <span class="enabler-name">Global Psytech Group of Companies</span>
+          <div class="badges load" style="--d:.75s">
+          <a href="#deduction" class="enabler">
+            <span class="enabler-label">Authorised</span>
+            <span class="enabler-name">ANGKASA deduction code holder</span>
             <span class="arrow">→</span>
           </a>
+          <a href="#partner" class="enabler">
+            <span class="enabler-label">Technology partner</span>
+            <span class="enabler-name">GFI Fintech</span>
+            <span class="arrow">→</span>
+          </a>
+          </div>
         </div>
 
         <div class="hero-visual load right" style="--d:.4s" id="hero-visual">
@@ -488,7 +518,7 @@
           </div>
           <div class="float-card c3" data-depth="-14">
             <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>
-            <span>Repayment received<small>Auto-debit · on schedule</small></span>
+            <span>Repayment received<small>Salary deduction · ANGKASA</small></span>
           </div>
           <div class="float-card c2" data-depth="10">
             <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M10 6.5h4v7.5"/></svg></span>
@@ -567,7 +597,7 @@
             <div class="lineage-node"><h3>Yayasan Pemangkin</h3><p>Parent foundation. The welfare legacy and social-impact mandate since 2004.</p></div>
             <div class="lineage-arrow" aria-hidden="true"><svg viewBox="0 0 40 16"><path d="M0 8h34M28 2l7 6-7 6"/></svg></div>
             <div class="lineage-node"><h3>YP Tech</h3><p>Technology subsidiary. Making welfare and financing more systematic through technology.</p></div>
-            <div class="lineage-node partner-node"><span class="tag-sm">Technology enabler</span><h3>Global Psytech Group of Companies</h3><p>Behavioural and data analytics partner powering YP Tech's data and AI capabilities.</p></div>
+            <div class="lineage-node partner-node"><span class="tag-sm">Technology partner</span><h3>GFI Fintech</h3><p>Data analytics and profiling technology partner powering YP Tech's financing platforms.</p></div>
           </div>
           <a href="#services" class="btn reveal up" style="--d:.4s">What We Do <span class="arrow">→</span></a>
         </div>
@@ -604,7 +634,7 @@
           <div class="icon"><svg viewBox="0 0 64 64"><rect x="6" y="12" width="52" height="40" rx="3"/><path d="M6 22h52M14 34h12M14 42h20"/><circle cx="46" cy="38" r="7"/><path d="M46 34v4l3 2"/></svg></div>
           <h3>Financing Management &amp; Collections</h3>
           <p>Servicing for the full financing lifecycle, with automated repayments, early-warning alerts and digital collections workflows.</p>
-          <ul><li>Auto-debit, DuitNow &amp; FPX repayments</li><li>Early-warning delinquency prediction</li><li>Restructuring &amp; collections case management</li></ul>
+          <ul><li>ANGKASA salary deduction, auto-debit &amp; FPX repayments</li><li>Early-warning delinquency prediction</li><li>Restructuring &amp; collections case management</li></ul>
         </article>
 
         <article class="service reveal up" style="--d:0.3s">
@@ -618,8 +648,43 @@
     </div>
   </section>
 
-  <!-- ===================== 4. IMPACT ===================== -->
-  <section id="impact" class="impact" data-section="4" data-title="Group Impact">
+  <!-- ===================== 4. SALARY DEDUCTION ===================== -->
+  <section id="deduction" class="section deduction" data-section="4" data-title="Salary Deduction Services">
+    <div class="container deduction-grid">
+      <div>
+        <span class="eyebrow reveal up">Authorised salary deduction</span>
+        <h2 class="reveal up" style="--d:.08s">Salary deduction services you can rely on</h2>
+        <p class="reveal up" style="--d:.16s">YP Tech is authorised to provide salary deduction (potongan gaji) services, connecting employers, financial institutions and contributors through one systematic, fully traceable process.</p>
+        <div class="angkasa reveal up" style="--d:.24s">
+          <div class="angkasa-seal" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/><circle cx="32" cy="32" r="21"/><path d="M22 32l7 7 13-14"/></svg></div>
+          <div>
+            <h3>Official ANGKASA deduction code holder</h3>
+            <p>YP Tech holds an official ANGKASA deduction code and is authorised by ANGKASA to collect repayments via salary deduction.</p>
+          </div>
+        </div>
+      </div>
+      <div class="deduct-cards">
+        <article class="deduct-card reveal right">
+          <span class="num">01</span>
+          <h3>Pay deduction for financing</h3>
+          <p>Authorised to provide pay deduction services that help financial institutions collect repayments reliably and give public workers a convenient, disciplined way to repay their financing.</p>
+        </article>
+        <article class="deduct-card reveal right" style="--d:.1s">
+          <span class="num">02</span>
+          <h3>Charitable contributions (sumbangan amal jariah)</h3>
+          <p>Authorised to provide salary deduction services for individuals who wish to make charitable contributions, with every contribution recorded, reconciled and reported.</p>
+        </article>
+        <article class="deduct-card reveal right" style="--d:.2s">
+          <span class="num">03</span>
+          <h3>ANGKASA repayment collection</h3>
+          <p>Repayments are collected through ANGKASA salary deduction under YP Tech's official deduction code, then reconciled and passed to the financing institution.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. IMPACT ===================== -->
+  <section id="impact" class="impact" data-section="5" data-title="Group Impact">
     <div class="container">
       <div class="impact-head reveal up">
         <span class="eyebrow">Our group's impact</span>
@@ -635,7 +700,7 @@
   </section>
 
   <!-- ===================== 5. CALL TO ACTION ===================== -->
-  <section id="cta" class="section cta" data-section="5" data-title="Call to Action">
+  <section id="cta" class="section cta" data-section="6" data-title="Call to Action">
     <div class="cta-shapes" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
     <div class="container center cta-inner">
       <h2 class="reveal up">Every ringgit counts: financing that lifts communities</h2>
@@ -645,15 +710,15 @@
   </section>
 
   <!-- ===================== 6. TECHNOLOGY PARTNER ===================== -->
-  <section id="partner" class="section partner" data-section="6" data-title="Technology Partner">
+  <section id="partner" class="section partner" data-section="7" data-title="Technology Partner">
     <div class="partner-bg" aria-hidden="true"></div>
     <div class="container partner-grid">
       <div>
-        <span class="eyebrow reveal up">Technology enabler</span>
-        <h2 class="reveal up" style="--d:.08s">In partnership with Global Psytech Group of Companies</h2>
-        <p class="reveal up" style="--d:.16s">Global Psytech Group of Companies is a Cyberjaya-based data technology group that specialises in behavioural and data analytics, including behavioural credit scoring and intelligent assessment. As YP Tech's technology enabler, it supplies the analytics engine and engineering expertise behind our financing platforms.</p>
+        <span class="eyebrow reveal up">Technology partner</span>
+        <h2 class="reveal up" style="--d:.08s">In partnership with GFI Fintech</h2>
+        <p class="reveal up" style="--d:.16s">GFI Fintech is a Kuala Lumpur-based data analytics technology company that specialises in profiling technology for the financial industry. Its flagship product, GFI, is a psychometric credit risk assessment system that helps financiers lend more inclusively. As YP Tech's technology partner, GFI Fintech supplies the analytics engine and engineering expertise behind our financing platforms.</p>
         <p class="reveal up" style="--d:.22s">Together we bring inclusive, data-driven financing to the communities we serve.</p>
-        <a href="https://www.globalpsytech.com/" target="_blank" rel="noopener" class="btn btn-mint reveal up" style="--d:.3s">Visit Global Psytech <span class="arrow">→</span></a>
+        <a href="https://www.gfi-fintech.com/" target="_blank" rel="noopener" class="btn btn-mint reveal up" style="--d:.3s">Visit GFI Fintech <span class="arrow">→</span></a>
       </div>
 
       <div class="partner-visual reveal zoom" style="--d:.15s">
@@ -664,8 +729,8 @@
           </div>
           <div class="link-line" aria-hidden="true"><svg viewBox="0 0 160 40"><path d="M0 20H160"/><circle class="dot-run" cx="0" cy="20" r="5"/></svg></div>
           <div class="party">
-            <span class="party-word">Global<br>Psytech</span>
-            <h3>Global Psytech Group of Companies</h3><p>Technology enabler</p>
+            <span class="party-word">GFI<br>Fintech</span>
+            <h3>GFI Fintech</h3><p>Technology partner</p>
           </div>
         </div>
         <div class="roles">
@@ -676,10 +741,27 @@
         </div>
       </div>
     </div>
+    <div class="container visit">
+      <div class="visit-text reveal up">
+        <span class="eyebrow">Partnership visit · Friday, 23 October 2026</span>
+        <h3>Meeting the Chairman of Yayasan Pemangkin</h3>
+        <p>We met with Dato' (AMB) Dr. Mohd Yusoff Bin A. Bakar, Chairman of Yayasan Pemangkin, on Friday, 23 October 2026, marking the collaboration between YP Tech and GFI Fintech in bringing systematic, technology-driven solutions to the welfare and financing sector.</p>
+      </div>
+      <div class="visit-gallery">
+        <figure class="visit-photo tall reveal left">
+          <img src="https://cdn.shopify.com/s/files/1/0907/7719/0713/files/Pic_Dr_Haniza_with_Chairman_Yayasan_Pemangkin.jpg?v=1794906773" alt="Presentation of a memento to the Chairman of Yayasan Pemangkin" loading="lazy" onerror="this.remove()">
+          <figcaption>Presentation of a memento to the Chairman of Yayasan Pemangkin</figcaption>
+        </figure>
+        <figure class="visit-photo wide reveal right" style="--d:.15s">
+          <img src="https://cdn.shopify.com/s/files/1/0907/7719/0713/files/Pic_with_Yayasan_Pemangkin_at_Lincoln_University.jpg?v=1794906784" alt="YP Tech and GFI Fintech with Yayasan Pemangkin" loading="lazy" onerror="this.remove()">
+          <figcaption>With Yayasan Pemangkin at Lincoln University</figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
 
   <!-- ===================== 7. NEWS ===================== -->
-  <section id="news" class="section news" data-section="7" data-title="News">
+  <section id="news" class="section news" data-section="8" data-title="News">
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow reveal up">Newsroom</span>
@@ -688,11 +770,11 @@
       <div class="news-grid">
         <article class="news-card reveal up">
           <div class="news-img">
-            <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="260" fill="#3a3a3a"/><rect x="40" y="170" width="320" height="16" fill="#555"/><circle cx="150" cy="110" r="22" fill="#6a6a6a"/><rect x="128" y="132" width="44" height="50" rx="8" fill="#6a6a6a"/><circle cx="250" cy="110" r="22" fill="#777"/><rect x="228" y="132" width="44" height="50" rx="8" fill="#777"/><path d="M172 150h56" stroke="#d5e7c3" stroke-width="6" stroke-linecap="round"/></svg>
-            <img src="images/news-1.jpg" alt="" onerror="this.remove()">
+            <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="260" fill="#3a3a3a"/><circle cx="150" cy="110" r="22" fill="#6a6a6a"/><rect x="128" y="132" width="44" height="60" rx="8" fill="#6a6a6a"/><circle cx="250" cy="110" r="22" fill="#777"/><rect x="228" y="132" width="44" height="60" rx="8" fill="#777"/><rect x="185" y="140" width="30" height="22" rx="2" fill="#d5e7c3"/></svg>
+            <img src="https://cdn.shopify.com/s/files/1/0907/7719/0713/files/Pic_Dr_Haniza_with_Chairman_Yayasan_Pemangkin.jpg?v=1794906773" alt="" loading="lazy" style="object-position: 50% 30%" onerror="this.remove()">
           </div>
-          <p class="news-meta">Announcement · 2026</p>
-          <h3>YP Tech appoints Global Psytech Group of Companies as technology enabler</h3>
+          <p class="news-meta">Partnership · October 23, 2026</p>
+          <h3>YP Tech and GFI Fintech meet the Chairman of Yayasan Pemangkin</h3>
           <a href="#partner" class="read-more">Read more <span class="arrow">→</span></a>
         </article>
         <article class="news-card reveal up" style="--d:.1s">
@@ -718,13 +800,14 @@
   </section>
 
   <!-- ===================== 8. CONTACT ===================== -->
-  <section id="contact" class="section contact" data-section="8" data-title="Contact">
+  <section id="contact" class="section contact" data-section="9" data-title="Contact">
     <div class="container contact-grid">
       <div class="contact-info">
         <span class="eyebrow reveal up">Get in touch</span>
         <h2 class="reveal up" style="--d:.08s">Let's build the future of finance together</h2>
         <p class="reveal up" style="--d:.16s">Whether you are a bank, development financial institution, cooperative or financing company, our solutions team is ready to scope your next initiative.</p>
-        <div class="item reveal up" style="--d:.2s"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="6" width="20" height="14" rx="2"/><path d="M3 8l10 7 10-7"/></svg><div><h3>Email</h3><p><a href="mailto:info@globalpsytech.com">info@globalpsytech.com</a></p></div></div>
+        <div class="item reveal up" style="--d:.2s"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24s8-7 8-13a8 8 0 10-16 0c0 6 8 13 8 13z"/><circle cx="13" cy="11" r="3"/></svg><div><h3>Address</h3><p>Wisma Koperasi Iman, No. 17 Jalan SG 3/4, Batu Caves 68100, Selangor Darul Ehsan</p></div></div>
+        <div class="item reveal up" style="--d:.26s"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="6" width="20" height="14" rx="2"/><path d="M3 8l10 7 10-7"/></svg><div><h3>Email</h3><p><a href="mailto:info@gfi-fintech.com">info@gfi-fintech.com</a></p></div></div>
       </div>
 
       <form id="contact-form" class="reveal right" novalidate>
@@ -738,7 +821,7 @@
           <div><label for="interest">Area of Interest</label>
             <select id="interest" name="interest">
               <option>Digital Financing Platform</option><option>Cooperative &amp; SME Financing</option>
-              <option>Financing Management &amp; Collections</option><option>Blockchain Financing</option><option>Partnership / Other</option>
+              <option>Financing Management &amp; Collections</option><option>Blockchain Financing</option><option>Salary Deduction Services</option><option>Charitable Contributions (Amal Jariah)</option><option>Partnership / Other</option>
             </select>
           </div>
         </div>
@@ -757,11 +840,11 @@
     <h2>Building a fairer financing future for community</h2>
     <div class="footer-grid">
       <div><h4>Address</h4><p>Wisma Koperasi Iman,<br>No. 17 Jalan SG 3/4,<br>Batu Caves 68100,<br>Selangor Darul Ehsan</p></div>
-      <div><h4>Say Hello</h4><p><a href="mailto:info@globalpsytech.com">info@globalpsytech.com</a></p></div>
+      <div><h4>Say Hello</h4><p><a href="mailto:info@gfi-fintech.com">info@gfi-fintech.com</a></p></div>
       <div><h4>Explore</h4><p><a href="#about">About</a><br><a href="#services">Services</a><br><a href="#partner">Partner</a><br><a href="#news">News</a><br><a href="#contact">Contact</a></p></div>
-      <div><h4>Group &amp; Partners</h4><p><a href="https://pemangkin.my/" target="_blank" rel="noopener">Yayasan Pemangkin</a><br>Technology enabler: <a href="https://www.globalpsytech.com/" target="_blank" rel="noopener">Global Psytech Group of Companies</a></p></div>
+      <div><h4>Group &amp; Partners</h4><p><a href="https://pemangkin.my/" target="_blank" rel="noopener">Yayasan Pemangkin</a><br>Technology partner: <a href="https://www.gfi-fintech.com/" target="_blank" rel="noopener">GFI Fintech</a></p></div>
     </div>
-    <div class="copy"><span>YP Tech © 2026. A subsidiary of Yayasan Pemangkin · Technology enabler: Global Psytech Group of Companies. All Rights Reserved.</span><span>Privacy · Terms · Security Disclosure</span></div>
+    <div class="copy"><span>YP Tech © 2026. A subsidiary of Yayasan Pemangkin · Technology partner: GFI Fintech. All Rights Reserved.</span><span>Privacy · Terms · Security Disclosure</span></div>
   </div>
 </footer>
 
