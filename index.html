@@ -272,17 +272,17 @@
   .role p { font-size: .84rem; margin: 0; line-height: 1.55; }
 
   /* =========================================================
-     4. Salary deduction
+     4. Loan repayment collection
      ========================================================= */
   .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
   .badges .enabler { margin-top: 0; }
   .deduction { background: var(--paper); }
   .deduction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-  .angkasa { display: flex; gap: 18px; align-items: center; margin-top: 28px; padding: 22px 24px; background: var(--green); color: var(--white); border-radius: 4px; box-shadow: 0 18px 40px rgba(15,58,38,.2); }
-  .angkasa h3 { color: var(--white); font-size: 1.1rem; margin-bottom: .25rem; }
-  .angkasa p { color: rgba(255,255,255,.85); margin: 0; font-size: .92rem; }
-  .angkasa-seal svg { width: 62px; height: 62px; stroke: var(--mint); fill: none; stroke-width: 2.2; animation: spinSeal 14s linear infinite; }
-  .angkasa-seal svg path { stroke-width: 3.4; }
+  .authorised { display: flex; gap: 18px; align-items: center; margin-top: 28px; padding: 22px 24px; background: var(--green); color: var(--white); border-radius: 4px; box-shadow: 0 18px 40px rgba(15,58,38,.2); }
+  .authorised h3 { color: var(--white); font-size: 1.1rem; margin-bottom: .25rem; }
+  .authorised p { color: rgba(255,255,255,.85); margin: 0; font-size: .92rem; }
+  .authorised-seal svg { width: 62px; height: 62px; stroke: var(--mint); fill: none; stroke-width: 2.2; animation: spinSeal 14s linear infinite; }
+  .authorised-seal svg path { stroke-width: 3.4; }
   @keyframes spinSeal { to { transform: rotate(360deg); } }
   .deduct-cards { display: grid; gap: 16px; }
   .deduct-card { position: relative; background: var(--white); padding: 24px 26px 24px 86px; border-radius: 4px; border-left: 4px solid var(--sage); box-shadow: 0 10px 30px rgba(0,0,0,.05); transition: transform .4s var(--ease), border-color .4s, box-shadow .4s; }
@@ -436,7 +436,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#deduction">Salary Deduction</a></li>
+      <li><a href="#deduction">Loan Collection</a></li>
       <li><a href="#partner">Partner</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -467,7 +467,7 @@
           <div class="badges load" style="--d:.75s">
           <a href="#deduction" class="enabler">
             <span class="enabler-label">Authorised</span>
-            <span class="enabler-name">ANGKASA deduction code holder</span>
+            <span class="enabler-name">Loan collection agency</span>
             <span class="arrow">→</span>
           </a>
           <a href="#partner" class="enabler">
@@ -536,7 +536,7 @@
           </div>
           <div class="float-card c3" data-depth="-14">
             <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>
-            <span>Repayment received<small>Salary deduction · ANGKASA</small></span>
+            <span>Repayment received<small>Collected via salary deduction</small></span>
           </div>
           <div class="float-card c2" data-depth="10">
             <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M10 6.5h4v7.5"/></svg></span>
@@ -652,7 +652,7 @@
           <div class="icon"><svg viewBox="0 0 64 64"><rect x="6" y="12" width="52" height="40" rx="3"/><path d="M6 22h52M14 34h12M14 42h20"/><circle cx="46" cy="38" r="7"/><path d="M46 34v4l3 2"/></svg></div>
           <h3>Financing Management &amp; Collections</h3>
           <p>Servicing for the full financing lifecycle, with automated repayments, early-warning alerts and digital collections workflows.</p>
-          <ul><li>ANGKASA salary deduction, auto-debit &amp; FPX repayments</li><li>Early-warning delinquency prediction</li><li>Restructuring &amp; collections case management</li></ul>
+          <ul><li>Salary deduction, auto-debit &amp; FPX repayments</li><li>Early-warning delinquency prediction</li><li>Restructuring &amp; collections case management</li></ul>
         </article>
 
         <article class="service reveal up" style="--d:0.3s">
@@ -666,18 +666,18 @@
     </div>
   </section>
 
-  <!-- ===================== 4. SALARY DEDUCTION ===================== -->
-  <section id="deduction" class="section deduction" data-section="4" data-title="Salary Deduction Services">
+  <!-- ===================== 4. LOAN REPAYMENT COLLECTION ===================== -->
+  <section id="deduction" class="section deduction" data-section="4" data-title="Loan Repayment Collection">
     <div class="container deduction-grid">
       <div>
-        <span class="eyebrow reveal up">Authorised salary deduction</span>
-        <h2 class="reveal up" style="--d:.08s">Salary deduction services you can rely on</h2>
-        <p class="reveal up" style="--d:.16s">YP Tech is authorised to provide salary deduction (potongan gaji) services, connecting employers, financial institutions and contributors through one systematic, fully traceable process.</p>
-        <div class="angkasa reveal up" style="--d:.24s">
-          <div class="angkasa-seal" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/><circle cx="32" cy="32" r="21"/><path d="M22 32l7 7 13-14"/></svg></div>
+        <span class="eyebrow reveal up">Authorised loan collection agency</span>
+        <h2 class="reveal up" style="--d:.08s">Loan repayment collection via salary deduction</h2>
+                <p class="reveal up" style="--d:.16s">YP Tech collects loan and financing repayments through salary deduction (potongan gaji), connecting employers, financial institutions and borrowers through one systematic, fully traceable process.</p>
+        <div class="authorised reveal up" style="--d:.24s">
+          <div class="authorised-seal" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/><circle cx="32" cy="32" r="21"/><path d="M22 32l7 7 13-14"/></svg></div>
           <div>
-            <h3>Official ANGKASA deduction code holder</h3>
-            <p>YP Tech holds an official ANGKASA deduction code and is authorised by ANGKASA to collect repayments via salary deduction.</p>
+            <h3>Authorised agency for loan collection</h3>
+            <p>YP Tech is an authorised agency for loan collection, collecting repayments via salary deduction on behalf of financial institutions.</p>
           </div>
         </div>
       </div>
@@ -694,8 +694,8 @@
         </article>
         <article class="deduct-card reveal right" style="--d:.2s">
           <span class="num">03</span>
-          <h3>ANGKASA repayment collection</h3>
-          <p>Repayments are collected through ANGKASA salary deduction under YP Tech's official deduction code, then reconciled and passed to the financing institution.</p>
+          <h3>Authorised loan collection</h3>
+          <p>As an authorised loan collection agency, YP Tech collects repayments via salary deduction, then reconciles them and passes them to the financing institution.</p>
         </article>
       </div>
     </div>
@@ -734,7 +734,7 @@
       <div>
         <span class="eyebrow reveal up">Technology partner</span>
         <h2 class="reveal up" style="--d:.08s">In partnership with Global Psytech Group of Companies</h2>
-        <p class="reveal up" style="--d:.16s">Global Psytech Group of Companies is a Malaysian data technology group that specialises in behavioural and data analytics. As YP Tech's technology partner, the group supplies the analytics engine and engineering expertise behind our financing platforms.</p>
+        <p class="reveal up" style="--d:.16s">Global Psytech Group of Companies is a Malaysian data tech group that specialises in behavioural and data analytics. As YP Tech's technology partner, the group supplies the analytics engine and engineering expertise behind our financing platforms.</p>
         <div class="subsidiary reveal up" style="--d:.2s">
           <span class="tag-sm">Subsidiary · Islamic financial technology</span>
           <h3>GFI Fintech</h3>
@@ -845,7 +845,7 @@
           <div><label for="interest">Area of Interest</label>
             <select id="interest" name="interest">
               <option>Digital Financing Platform</option><option>Cooperative &amp; SME Financing</option>
-              <option>Financing Management &amp; Collections</option><option>Blockchain Financing</option><option>Salary Deduction Services</option><option>Charitable Contributions (Amal Jariah)</option><option>Partnership / Other</option>
+              <option>Financing Management &amp; Collections</option><option>Blockchain Financing</option><option>Loan Repayment Collection</option><option>Charitable Contributions (Amal Jariah)</option><option>Partnership / Other</option>
             </select>
           </div>
         </div>
